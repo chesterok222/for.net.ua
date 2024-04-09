@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="ecomitize" translate="label" sortOrder="10">
+            <label>Ecomitize</label>
+        </tab>
+        <section id="product_import" translate="label" sortOrder="10" showInDefault="1">
+            <class>separator-top</class>
+            <label>Product Import</label>
+            <tab>ecomitize</tab>
+            <resource>Ecomitize_ProductImport::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="3" showInDefault="1">
+                <label>General</label>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="ua_url" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>UA Feed URL</label>
+                    <comment>https://deps.ua/components/com_jshopping/files/importexport/googleadwordsexport/provide-all-ua.xml</comment>
+                </field>
+                <field id="ru_url" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>RU Feed URL</label>
+                    <comment>https://deps.ua/components/com_jshopping/files/importexport/googleadwordsexport/provide-all-ru.xml</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
