@@ -331,6 +331,7 @@ return [
         'Magefan_Community' => 1,
         'Magefan_Blog' => 1,
         'Magefan_WysiwygAdvanced' => 1,
+        'Mageplaza_Core' => 1,
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeGraphQl' => 1,
         'Sm_BackEnd' => 1,

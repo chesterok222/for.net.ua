@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "31e137add59e34cc8958c98f406e953f",
+    "content-hash": "ae7930c6a5142de4b006591484a3de60",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -17793,6 +17793,135 @@
             "time": "2023-02-08T18:07:39+00:00"
         },
         {
+            "name": "mageplaza/magento-2-russian-language-pack",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mageplaza/magento-2-russian-language-pack.git",
+                "reference": "4ea4890547a67ddc3cebd8135ae416277e09314e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mageplaza/magento-2-russian-language-pack/zipball/4ea4890547a67ddc3cebd8135ae416277e09314e",
+                "reference": "4ea4890547a67ddc3cebd8135ae416277e09314e",
+                "shasum": ""
+            },
+            "require": {
+                "mageplaza/module-core": "^1.3.13"
+            },
+            "default-branch": true,
+            "type": "magento2-language",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mageplaza team",
+                    "email": "hi@mageplaza.com",
+                    "homepage": "https://www.mageplaza.com",
+                    "role": "Leader"
+                }
+            ],
+            "description": "Russian language package for Magento 2",
+            "homepage": "https://www.mageplaza.com",
+            "support": {
+                "issues": "https://github.com/mageplaza/magento-2-russian-language-pack/issues",
+                "source": "https://github.com/mageplaza/magento-2-russian-language-pack/tree/master"
+            },
+            "time": "2023-04-28T09:25:10+00:00"
+        },
+        {
+            "name": "mageplaza/magento-2-ukrainian-language-pack",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mageplaza/magento-2-ukrainian-language-pack.git",
+                "reference": "820426421c315bdce891981439ada4978af0105b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mageplaza/magento-2-ukrainian-language-pack/zipball/820426421c315bdce891981439ada4978af0105b",
+                "reference": "820426421c315bdce891981439ada4978af0105b",
+                "shasum": ""
+            },
+            "require": {
+                "mageplaza/module-core": "^1.3.13"
+            },
+            "default-branch": true,
+            "type": "magento2-language",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mageplaza team",
+                    "email": "hi@mageplaza.com",
+                    "homepage": "https://www.mageplaza.com",
+                    "role": "Leader"
+                }
+            ],
+            "description": "Ukrainian language package for Magento 2",
+            "homepage": "https://www.mageplaza.com",
+            "support": {
+                "issues": "https://github.com/mageplaza/magento-2-ukrainian-language-pack/issues",
+                "source": "https://github.com/mageplaza/magento-2-ukrainian-language-pack/tree/master"
+            },
+            "time": "2022-02-22T09:05:23+00:00"
+        },
+        {
+            "name": "mageplaza/module-core",
+            "version": "1.5.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mageplaza/module-core.git",
+                "reference": "a42f6ee586c917aaa407a0e97f848c7368867b0f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mageplaza/module-core/zipball/a42f6ee586c917aaa407a0e97f848c7368867b0f",
+                "reference": "a42f6ee586c917aaa407a0e97f848c7368867b0f",
+                "shasum": ""
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Mageplaza\\Core\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Mageplaza",
+                    "email": "support@mageplaza.com",
+                    "homepage": "https://www.mageplaza.com",
+                    "role": "Technical Support"
+                }
+            ],
+            "description": "Mageplaza Core for Magento 2",
+            "support": {
+                "source": "https://github.com/mageplaza/module-core/tree/v1.5.6"
+            },
+            "time": "2024-01-19T09:41:41+00:00"
+        },
+        {
             "name": "monolog/monolog",
             "version": "2.9.1",
             "source": {
@@ -27009,7 +27138,10 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "mageplaza/magento-2-russian-language-pack": 20,
+        "mageplaza/magento-2-ukrainian-language-pack": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
