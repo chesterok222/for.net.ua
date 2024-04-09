@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <product_import>
+            <general>
+                <active>1</active>
+                <ua_url>https://deps.ua/components/com_jshopping/files/importexport/googleadwordsexport/provide-all-ua.xml</ua_url>
+                <ru_url>https://deps.ua/components/com_jshopping/files/importexport/googleadwordsexport/provide-all-ru.xml</ru_url>
+            </general>
+        </product_import>
+    </default>
+</config>
