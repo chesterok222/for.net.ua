@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="magentech" translate="label" sortOrder="1">
+            <label>Magentech.com</label>
+        </tab>
+        <section id="searchbox" translate="label" type="text" sortOrder="130" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <class>separator-top</class>
+            <label>SM Search Box</label>
+            <tab>magentech</tab>
+            <resource>Sm_SearchBox::config_searchbox</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>General Settings</label>
+
+                <field id="root_catalog" translate="label" type="select" sortOrder="6" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Root Catalog Id</label>
+                    <validate>required-entry</validate>
+                    <source_model>Sm\SearchBox\Model\Config\Source\ListCategory</source_model>
+                    <comment>Please select one categories.</comment>
+                </field>
+                <field id="max_level" translate="label" type="text" sortOrder="7" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Max Level</label>
+                    <validate>required-entry integer validate-greater-than-zero validate-number</validate>
+                    <comment>The number of child category levels to return.</comment>
+                </field>
+
+            </group>
+            <group id="product_information" translate="label" type="text" sortOrder="7" showInDefault="1"
+                   showInWebsite="1" showInStore="1">
+                <label>Product Information</label>
+                <field id="author" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label><![CDATA[
+											<p>Vesion: 2.1.0</p>
+											
+								]]></label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

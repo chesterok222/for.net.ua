@@ -1,0 +1,181 @@
+/**
+ * Footer 2 style
+ */
+.footer-top {
+    background-color: #18232e;
+    padding-top: 53px;
+    padding-bottom: 15px;
+    color: #bbbbbb;
+    z-index: 0;
+    position: relative;
+    &:after{
+        background: #161f29;
+        display: inline-block;
+        width: 28%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: "";
+        z-index: -1;
+
+    }
+}
+
+
+.social-footer {
+    margin-bottom:0px;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        .clearfix();
+
+        li {
+            float: left;
+            margin: 0 10px 0 0;
+
+            a {
+                color: #fff;
+                width: 40px;
+                height: 40px;
+                text-align: center;
+                line-height: 40px;
+                font-size: 18px;
+                display: block;
+                .border-radius(4px);
+                .transition(.3s);
+                &:hover{
+                    background-color:transparent;
+                    .transform(translateY(-5px)); 
+                }
+                &.icon-facebook1{
+                    background-color: #305594;
+                }
+                &.icon-twitter1{
+                    background-color: #28b3ff;
+                }
+                &.icon-instagram{
+                    background-color: #ff14ec;
+                }
+                &.icon-youtube1{
+                    background-color: #ff1100;
+                }
+                &.icon-linkedin2{
+                    background-color: #0276b9;
+                }
+                &.icon-google-plus{
+                    background-color: #ff5959;
+                }
+            }
+        }
+    }
+}
+
+.block-footer {
+    margin-bottom: 40px;
+
+    .block-footer-title {
+        font-size: 100%;
+        color: #fff;
+        font-weight: 600;
+        margin-bottom: 17px;
+        text-transform: uppercase;
+        &:after{
+            width: 30px;
+            content: "";
+            display: block;
+            border-bottom-width: 3px;
+            border-style:  dotted none none none;
+            margin: 15px 0 25px;
+        }
+    }
+    
+
+    .block-footer-content {
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                margin-bottom: 15px;
+                a {
+                    padding-left: 0;
+                    padding-bottom: 5px;
+                    color: #bbbbbb;
+                    border-bottom: 1px dashed transparent;
+                    .transition(.2s);
+                    
+                    &:hover{
+                        font-weight:bold;
+                        margin-left: 8px;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        &.block-instagram ul {
+            margin: 0 -10px;
+            li {
+                float: left;
+                width: 33.333%;
+                padding: 0 10px;
+                a:hover{
+                    margin:0px !important;
+                }
+            }
+        }
+    }
+
+    .footer-contact {
+        ul li {
+            min-height: 33px;
+            color: #bbbbbb;
+            position: relative;
+            padding-left: 30px;
+
+            &:before {
+                position: absolute;
+                left: 0;
+                top: -2px;
+                color: #222;
+            }
+
+            &.address {
+                &:before {
+                    top: 8px;
+                    .icomoon(f279, 14px);
+                }
+            }
+
+            &.phone:before {
+                .icomoon(f098, 16px);
+            }
+
+            &.email:before {
+                .icomoon(f0e0, 14px);
+            }
+
+           
+        }
+    }
+}
+
+.footer-bottom {
+    background-color: #121b23;
+    padding: 20px 0;
+
+    address {
+        color: #bbbbbb;
+        margin: 10px 0 0;
+        font-size: 100%;
+    }
+
+    .footer-payments {
+        text-align: right;
+        margin-top: 8px;
+    }
+}
+

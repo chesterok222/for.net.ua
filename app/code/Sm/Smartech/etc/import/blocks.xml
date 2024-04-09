@@ -1,0 +1,655 @@
+<?xml version="1.0"?>
+<root>
+  <blocks>
+    <cms_item>
+      <title>Smartech - Footer 1 Content</title>
+      <identifier>footer-1-content</identifier>
+      <content><![CDATA[<div class="footer-top">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-4">
+				<div class="block-footer block-footer-contact">
+					<div class="block-footer-title">Contact Us</div>
+					
+					<div class="block-footer-content footer-contact">
+                                          <p style="
+    margin-bottom: 20px;
+">Lorem ipsum dolor sit amet, consectetu adipiscing elite sed do eiusmod tempor incididunt ut labore et dolore  magna aliqua quis ipsum suspendisse.</p>
+						<ul>
+							<li class="address">4331 Dominion St, Burnaby, BC V5G 1C7, Canada<br>
+							7X4V+M2 Burnaby, British Columbia, Canada</li>
+							<li class="phone">(+80)123 456 789 - (+80)123 456 789</li>
+							<li class="email">info@example.com - info1@example.com</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-2 col-md-4 col-sm-6">
+				<div class="block-footer">
+					<div class="block-footer-title">Store Location</div>
+					
+					<div class="block-footer-content">
+						<ul>
+							<li><a href="#">Los Angeles - USA</a></li>
+							<li><a href="#">New York - USA</a></li>
+							<li><a href="#">California - USA</a></li>
+							<li><a href="#">Bangkok - Thailand</a></li>
+							<li><a href="#">Paris - France</a></li>
+							<li><a href="#">London - England</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-2 col-md-4 col-sm-6">
+				<div class="block-footer block-service-footer">
+					<div class="block-footer-title">Customer Service</div>
+					
+					<div class="block-footer-content">
+						<ul>
+							<li><a href="#">Customer Service</a></li>
+							<li><a href="#">Shipping & Returns</a></li>
+							<li><a href="#">Track Your Order</a></li>
+							<li><a href="#">Help Center</a></li>
+							<li><a href="#">Store Location</a></li>
+							<li><a href="#">Customer Feedback</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-2 col-md-4 col-sm-6">
+				<div class="block-footer block-info-footer">
+					<div class="block-footer-title">Information</div>
+					
+					<div class="block-footer-content">
+						<ul>
+							<li><a href="#">Caps & Hats</a></li>
+							<li><a href="#">Hoodies & Sweatshirts</a></li>
+							<li><a href="#">Jacket & Coats</a></li>
+							<li><a href="#">Jumpers & Cardigans</a></li>
+							<li><a href="#">Shoes, Boots & Trainers</a></li>
+							<li><a href="#">Underwear & Socks</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-4 col-sm-6">
+				<div class="block-footer block-info-footer">
+					<div class="block-footer-title">Instagram</div>
+					
+					<div class="block-footer-content block-instagram">
+						<ul>
+							<li><a class="fancybox" rel="fancybox-button" href="{{media url=&quot;wysiwyg/instagram/1.jpg&quot;}}"><img src="{{media url=&quot;wysiwyg/instagram/thum-1.jpg&quot;}}" alt=""></a></li>
+							<li><a class="fancybox" rel="fancybox-button" href="{{media url=&quot;wysiwyg/instagram/2.jpg&quot;}}"><img src="{{media url=&quot;wysiwyg/instagram/thum-2.jpg&quot;}}" alt=""></a></li>
+							<li><a class="fancybox" rel="fancybox-button" href="{{media url=&quot;wysiwyg/instagram/3.jpg&quot;}}"><img src="{{media url=&quot;wysiwyg/instagram/thum-3.jpg&quot;}}" alt=""></a></li>
+							<li><a class="fancybox" rel="fancybox-button" href="{{media url=&quot;wysiwyg/instagram/4.jpg&quot;}}"><img src="{{media url=&quot;wysiwyg/instagram/thum-4.jpg&quot;}}" alt=""></a></li>
+							<li><a class="fancybox" rel="fancybox-button" href="{{media url=&quot;wysiwyg/instagram/5.jpg&quot;}}"><img src="{{media url=&quot;wysiwyg/instagram/thum-5.jpg&quot;}}" alt=""></a></li>
+							<li><a class="fancybox" rel="fancybox-button" href="{{media url=&quot;wysiwyg/instagram/6.jpg&quot;}}"><img src="{{media url=&quot;wysiwyg/instagram/thum-6.jpg&quot;}}" alt=""></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="footer-middle">
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-3">
+				<div class="social-footer">
+					<ul>
+						<li>
+							<a class="icon-facebook1" href="#" title="Facebook">
+								<span class="hidden">Facebook</span>
+							</a>
+						</li>
+						
+						<li>
+							<a class="icon-twitter1" href="#" title="Twitter">
+								<span class="hidden">Twitter</span>
+							</a>
+						</li>
+						
+						<li>
+							<a class="icon-instagram" href="#" title="Instagram">
+								<span class="hidden">Instagram</span>
+							</a>
+						</li>
+						
+						<li>
+							<a class="icon-youtube1" href="#" title="Youtube">
+								<span class="hidden">Youtube</span>
+							</a>
+						</li>
+						
+						<li>
+							<a class="icon-linkedin2" href="#" title="Linkedin">
+								<span class="hidden">Linkedin</span>
+							</a>
+						</li>
+                                              <li>
+							<a class="icon-google-plus" href="#" title="Google">
+								<span class="hidden">Google</span>
+							</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+			
+			<div class="col-xl-9">
+				<div class="subcribe-footer-content">
+					<div class="subcribe-footer-title">
+						Join Our Newsletter Now  <span class="text-theme-color">Get 35% OFF </span> all product 
+					</div>
+					
+					{{block class="Magento\Newsletter\Block\Subscribe" template="subscribe-footer.phtml"}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>]]></content>
+      <is_active>1</is_active>
+      <store_id>0</store_id>
+    </cms_item>
+    <cms_item>
+      <title>Smartech - Footer Payments</title>
+      <identifier>footer-payments</identifier>
+      <content><![CDATA[<div class="footer-payments"><img class="mark-lazy" src="{{media url=&quot;wysiwyg/payments/payment-footer.png&quot;}}" alt="Payments" width="370" height="32" ></div>]]></content>
+      <is_active>1</is_active>
+      <store_id>0</store_id>
+    </cms_item>
+    <cms_item>
+      <title>Theme - Megamenu Vertical Config</title>
+      <identifier>megamenu-vertical</identifier>
+      <content><![CDATA[<div class="vertical-menu">{{block class="Sm\MegaMenu\Block\MegaMenu\View" template="Sm_MegaMenu::vertical.phtml" theme="2" group_id="2" title="All Categories"}}</div>]]></content>
+      <is_active>1</is_active>
+      <store_id>0</store_id>
+    </cms_item>
+    <cms_item>
+      <title>Theme - Megamenu Horizontal Config</title>
+      <identifier>megamenu-horizontal</identifier>
+      <content><![CDATA[<div class="horizontal-menu">{{block class="Sm\MegaMenu\Block\MegaMenu\View" template="Sm_MegaMenu::horizontal.phtml" theme="1" group_id="1"}}</div>]]></content>
+      <is_active>1</is_active>
+      <store_id>0</store_id>
+    </cms_item>
+    <cms_item>
+      <title>Theme - About Us Content</title>
+      <identifier>about-us-content</identifier>
+      <content><![CDATA[<div class="container">
+<div class="about-top">
+<div class="row">
+<div class="col-md-8">
+<h4 class="text-theme-color">Moments of Games</h4>
+<h1>It’s not just a game,<br>it’s an infection.</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut<br> labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+<a class="lear-more">Learn More </a>
+</div>
+<div class="col-md-4">
+<div class="img-about"><img src="{{media url="wysiwyg/banner/img-about.jpg"}}" alt="" /></div>
+</div>
+</div>
+</div>
+<div class="about-policy">
+<div class="row">
+<div class="col-lg-3 col-md-6">
+<div class="item">
+<div class="icon"><img src="{{media url="wysiwyg/icon/icon-1.png"}}" alt="" /></div>
+<div class="content">
+<h2>Worldwide Delivery</h2>
+<p>Free Delivery with $50</p>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="item">
+<div class="icon"><img src="{{media url="wysiwyg/icon/icon-2.png"}}" alt="" /></div>
+<div class="content">
+<h2>Worldwide Delivery</h2>
+<p>Free Delivery with $50</p>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="item">
+<div class="icon"><img src="{{media url="wysiwyg/icon/icon-3.png"}}" alt="" /></div>
+<div class="content">
+<h2>Worldwide Delivery</h2>
+<p>Free Delivery with $50</p>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="item">
+<div class="icon"><img src="{{media url="wysiwyg/icon/icon-4.png"}}" alt="" /></div>
+<div class="content">
+<h2>Worldwide Delivery</h2>
+<p>Free Delivery with $50</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="about-center">
+<div class="container">
+<div class="content">
+<div class="row">
+<div class="col-lg-4">
+<h2>
+What difference<br>
+when you shop<br>
+at Origin!
+</h2>
+</div>
+<div class="col-lg-4">
+<div class="item">
+<h3>FULLY RESPONSIVE</h3>
+<p>Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit. Morbi blandit nisl ante.</p>
+</div>
+<div class="item">
+<h3>DESIGN QUALITY</h3>
+<p>Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit. Morbi blandit nisl ante.</p>
+</div>
+</div>
+<div class="col-lg-4">
+<div class="item">
+<h3>POWERFUL OPTIONS</h3>
+<p>Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit. Morbi blandit nisl ante.</p>
+</div>
+<div class="item">
+<h3>PROFESSIONAL SUPPORT</h3>
+<p>Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit. Morbi blandit nisl ante.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="about-client-say">
+				<div data-owl="owl-slider" data-autoplay="false" data-nav="false" data-dots="false" data-screen0="1" data-screen481="1" data-screen768="2" data-screen992="2" data-screen1200="2" data-screen1441="2" data-screen1681="2" data-screen1920="2" data-margin="30" data-autoplayhoverpause="true" data-loop="false" data-center="false" data-stagepadding="0" data-mousedrag="true" data-touchdrag="true">
+					<div class="owl-carousel owl-theme">
+						<div class="item">							
+							<div class="client-jobname">
+								<div class="client-name">Amanda Cerny</div>
+								<div class="client-job">Web Developer</div>
+							</div>
+							<div class="client-info">
+								<div class="client-description">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br> sed do eiusmod tempor incididunt ut labore et<br> dolore magna aliqua. 
+								</div>
+								
+							</div>
+							<div class="client-image"><img class="mark-lazy" src="{{media url="wysiwyg/about-us/member/item-1.jpg"}}" alt="Client Image" /></div>
+						</div>
+						<div class="item">							
+							<div class="client-jobname">
+								<div class="client-name">Amanda Cerny</div>
+								<div class="client-job">Web Developer</div>
+							</div>
+							<div class="client-info">
+								<div class="client-description">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br> sed do eiusmod tempor incididunt ut labore et<br> dolore magna aliqua. 
+								</div>
+								
+							</div>
+							<div class="client-image"><img class="mark-lazy" src="{{media url="wysiwyg/about-us/member/item-2.jpg"}}" alt="Client Image" /></div>
+						</div>
+						<div class="item">							
+							<div class="client-jobname">
+								<div class="client-name">Amanda Cerny</div>
+								<div class="client-job">Web Developer</div>
+							</div>
+							<div class="client-info">
+								<div class="client-description">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br> sed do eiusmod tempor incididunt ut labore et<br> dolore magna aliqua. 
+								</div>
+								
+							</div>
+							<div class="client-image"><img class="mark-lazy" src="{{media url="wysiwyg/about-us/member/item-3.jpg"}}" alt="Client Image" /></div>
+						</div>
+						
+						
+
+					</div>
+					
+					<div class="loading-content">
+						<span class="hidden">Loading...</span>
+					</div>
+				</div>
+	</div>
+	</div>]]></content>
+      <is_active>1</is_active>
+      <store_id>0</store_id>
+    </cms_item>
+    <cms_item>
+      <title>Theme - Google Map</title>
+      <identifier>google-map</identifier>
+      <content><![CDATA[<div class="map"><iframe style="border: 0;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8352535722393!2d144.95373531573256!3d-37.8173276797518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1svi!2s!4v1558405327045!5m2!1svi!2s" width="600" height="450" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div>]]></content>
+      <is_active>1</is_active>
+      <store_id>0</store_id>
+    </cms_item>
+    <cms_item>
+      <title>Theme - Contact Us Info</title>
+      <identifier>contact-us-info</identifier>
+      <content><![CDATA[<div class="contact-us-info">
+<div class="bonus-content">
+<h3 style="margin-bottom: 15px; color: #222222;">We're here to help!</h3>
+<p style="margin-bottom: 15px;">The TRUE customer care team is available Monday - Friday from 7am - 7pm UTC +7. Saturday &amp; Sunday we’re<br> definitely on the links but we'll answer all inquiries as soon as we are back in the office on the next business day..</p>
+<p style="margin-bottom: 20px;">We will do our best to respond as soon as possible; typical response time is within 24 hours.</p>
+<p style="margin-bottom: 20px;">Please check out our FAQ for quick insights on sizing, features and model comparisons</p>
+<p style="margin-bottom: 20px;">Need an exchange/return? <a style="color: #222222; text-decoration: underline;" href="#">Submit your request here</a>.</p>
+<p style="margin-bottom: 20px;">Thank you and we look forward to connecting with you soon!</p>
+</div>
+</div>]]></content>
+      <is_active>1</is_active>
+      <store_id>0</store_id>
+    </cms_item>
+    <cms_item>
+      <title>Theme - Newsletter Popup Description</title>
+      <identifier>newsletter-popup-description</identifier>
+      <content><![CDATA[<div class="news-title">Get Our Newsletter</div>
+<div class="news-description">Subscribe to the mailing list to receive updates on new arrivals, special offers and other discount information</div>]]></content>
+      <is_active>1</is_active>
+      <store_id>0</store_id>
+    </cms_item>
+    <cms_item>
+      <title>Smartech - Product List - Sidebar</title>
+      <identifier>product-sidebar</identifier>
+      <content><![CDATA[<div class="product-sidebar hidden-rating">{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::list.phtml" title_module="Bestsellers" product_source="best_sellers" select_category="" product_limitation="4" display_countdown="0" date_to=""}}</div>]]></content>
+      <is_active>1</is_active>
+      <store_id>0</store_id>
+    </cms_item>
+    <cms_item>
+      <title>Smartech - Product Vertical Megamenu</title>
+      <identifier>product-megamenu</identifier>
+      <content><![CDATA[<div class="product-megamenu hidden-block-title">{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::product-megamenu.phtml" title_module="Hot Products" product_source="best_sellers" select_category="4" product_limitation="1" display_countdown="0" date_to=""}}</div>]]></content>
+      <is_active>1</is_active>
+      <store_id>0</store_id>
+    </cms_item>
+    <cms_item>
+      <title>Smartech - Header Promotion</title>
+      <identifier>header-promotion</identifier>
+      <content><![CDATA[<div class="promotion-block d-none d-xl-block">
+						<a href="#">Special sale <strong>30% Off </strong>on all item</a>
+					</div>]]></content>
+      <is_active>1</is_active>
+      <store_id>0</store_id>
+    </cms_item>
+    <cms_item>
+      <title>Smartech - Footer 2 Content</title>
+      <identifier>footer-2-content</identifier>
+      <content><![CDATA[<div class="footer-top">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-4">
+				<div class="block-footer block-footer-contact">
+					<div class="block-footer-title">Contact Us</div>
+					
+					<div class="block-footer-content footer-contact">
+                                          <p style="
+    margin-bottom: 20px;
+">Lorem ipsum dolor sit amet, consectetu adipiscing elite sed do eiusmod tempor incididunt ut labore et dolore magna aliqua quis ipsum suspendisse.</p>
+						<ul>
+							<li class="address">4331 Dominion St, Burnaby, BC V5G 1C7, Canada<br>
+							7X4V+M2 Burnaby, British Columbia, Canada</li>
+							<li class="phone">(+80)123 456 789 - (+80)123 456 789</li>
+							<li class="email">info@example.com - info1@example.com</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-2 col-md-4 col-sm-6">
+				<div class="block-footer">
+					<div class="block-footer-title">Store Location</div>
+					
+					<div class="block-footer-content">
+						<ul>
+							<li><a href="#">Los Angeles - USA</a></li>
+							<li><a href="#">New York - USA</a></li>
+							<li><a href="#">California - USA</a></li>
+							<li><a href="#">Bangkok - Thailand</a></li>
+							<li><a href="#">Paris - France</a></li>
+							<li><a href="#">London - England</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-2 col-md-4 col-sm-6">
+				<div class="block-footer block-service-footer">
+					<div class="block-footer-title">Customer Service</div>
+					
+					<div class="block-footer-content">
+						<ul>
+							<li><a href="#">Customer Service</a></li>
+							<li><a href="#">Shipping & Returns</a></li>
+							<li><a href="#">Track Your Order</a></li>
+							<li><a href="#">Help Center</a></li>
+							<li><a href="#">Store Location</a></li>
+							<li><a href="#">Customer Feedback</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-2 col-md-4 col-sm-6">
+				<div class="block-footer block-info-footer">
+					<div class="block-footer-title">Information</div>
+					
+					<div class="block-footer-content">
+						<ul>
+							<li><a href="#">Caps & Hats</a></li>
+							<li><a href="#">Hoodies & Sweatshirts</a></li>
+							<li><a href="#">Jacket & Coats</a></li>
+							<li><a href="#">Jumpers & Cardigans</a></li>
+							<li><a href="#">Shoes, Boots & Trainers</a></li>
+							<li><a href="#">Underwear & Socks</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-4 col-sm-6">
+				<div class="block-footer block-info-footer">
+					<div class="block-footer-title">Instagram</div>
+					<div class="block-footer-content block-instagram">
+						<ul>
+							<li><a class="fancybox" rel="fancybox-button" href="{{media url=&quot;wysiwyg/instagram/1.jpg&quot;}}"><img src="{{media url=&quot;wysiwyg/instagram/1.jpg&quot;}}" alt=""></a></li>
+							<li><a class="fancybox" rel="fancybox-button" href="{{media url=&quot;wysiwyg/instagram/2.jpg&quot;}}"><img src="{{media url=&quot;wysiwyg/instagram/2.jpg&quot;}}" alt=""></a></li>
+							<li><a class="fancybox" rel="fancybox-button" href="{{media url=&quot;wysiwyg/instagram/3.jpg&quot;}}"><img src="{{media url=&quot;wysiwyg/instagram/3.jpg&quot;}}" alt=""></a></li>
+							<li><a class="fancybox" rel="fancybox-button" href="{{media url=&quot;wysiwyg/instagram/4.jpg&quot;}}"><img src="{{media url=&quot;wysiwyg/instagram/4.jpg&quot;}}" alt=""></a></li>
+							<li><a class="fancybox" rel="fancybox-button" href="{{media url=&quot;wysiwyg/instagram/5.jpg&quot;}}"><img src="{{media url=&quot;wysiwyg/instagram/5.jpg&quot;}}" alt=""></a></li>
+							<li><a class="fancybox" rel="fancybox-button" href="{{media url=&quot;wysiwyg/instagram/6.jpg&quot;}}"><img src="{{media url=&quot;wysiwyg/instagram/6.jpg&quot;}}" alt=""></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>]]></content>
+      <is_active>1</is_active>
+      <store_id>0</store_id>
+    </cms_item>
+    <cms_item>
+      <title>Smartech - Social footer 2</title>
+      <identifier>social-footer-2</identifier>
+      <content><![CDATA[		<div class="social-footer">
+					<ul>
+						<li>
+							<a class="icon-facebook1" href="#" title="Facebook">
+								<span class="hidden">Facebook</span>
+							</a>
+						</li>
+						
+						<li>
+							<a class="icon-twitter1" href="#" title="Twitter">
+								<span class="hidden">Twitter</span>
+							</a>
+						</li>
+						
+						<li>
+							<a class="icon-instagram" href="#" title="Instagram">
+								<span class="hidden">Instagram</span>
+							</a>
+						</li>
+						
+						<li>
+							<a class="icon-youtube1" href="#" title="Youtube">
+								<span class="hidden">Youtube</span>
+							</a>
+						</li>
+						
+						<li>
+							<a class="icon-linkedin2" href="#" title="Linkedin">
+								<span class="hidden">Linkedin</span>
+							</a>
+						</li>
+                                              <li>
+							<a class="icon-google-plus" href="#" title="Google">
+								<span class="hidden">Google</span>
+							</a>
+						</li>
+
+					</ul>
+				</div>]]></content>
+      <is_active>1</is_active>
+      <store_id>0</store_id>
+    </cms_item>
+    <cms_item>
+      <title>Smartech - Footer Payments v2</title>
+      <identifier>footer-payments-v2</identifier>
+      <content><![CDATA[<div class="footer-payments"><img class="mark-lazy" src="{{media url=&quot;wysiwyg/payments/payment-footer2.png&quot;}}" alt="Payments" width="370" height="32" ></div>]]></content>
+      <is_active>1</is_active>
+      <store_id>0</store_id>
+    </cms_item>
+    <cms_item>
+      <title>Smartech - Hotline header 1</title>
+      <identifier>hotline-header</identifier>
+      <content><![CDATA[<div class="hotline-header d-none d-xl-block">
+<span>Hotline Free:</span>
+<strong>06-900-6789-09</strong>
+</div>]]></content>
+      <is_active>1</is_active>
+      <store_id>0</store_id>
+    </cms_item>
+    <cms_item>
+      <title>Smartech - Contact header 1</title>
+      <identifier>contact-header</identifier>
+      <content><![CDATA[<div class="header-topleft">
+<ul>
+<li>Welcome to Smartech online Store</li>
+<li class="shipto">Track Your Order</li>
+<li class="email">Sales@domain.com</li>
+</ul>
+</div>
+]]></content>
+      <is_active>1</is_active>
+      <store_id>0</store_id>
+    </cms_item>
+    <cms_item>
+      <title>Smartech - Social header</title>
+      <identifier>social-header</identifier>
+      <content><![CDATA[<div class="social-top">
+					<ul>
+						<li>
+							<a class="icon-facebook1" href="https://www.facebook.com/MagenTech" title="Facebook">
+								<span class="hidden">Facebook</span>
+							</a>
+						</li>
+						
+						<li>
+							<a class="icon-twitter1" href="https://twitter.com/MagenTech" title="Twitter">
+								<span class="hidden">Twitter</span>
+							</a>
+						</li>
+						
+						<li>
+							<a class="icon-instagram" href="#" title="Instagram">
+								<span class="hidden">Instagram</span>
+							</a>
+						</li>
+						
+						<li>
+							<a class="icon-youtube" href="https://www.youtube.com/user/smartaddons" title="Youtube">
+								<span class="hidden">Youtube</span>
+							</a>
+						</li>
+						
+						
+					</ul>
+				</div>]]></content>
+      <is_active>1</is_active>
+      <store_id>0</store_id>
+    </cms_item>
+    <cms_item>
+      <title>Smartech - contact header 2</title>
+      <identifier>contact-header-v2</identifier>
+      <content><![CDATA[<div class="email-header d-none d-xl-block"><a href="#">Sales@domain.com</a></div>]]></content>
+      <is_active>1</is_active>
+      <store_id>0</store_id>
+    </cms_item>
+    <cms_item>
+      <title>Theme - Contact us Address</title>
+      <identifier>contact-us-address</identifier>
+      <content><![CDATA[<div class="row">
+<div class="col-sm-6">
+<h3><a href="#">Smartech - New York</a></h3>
+<ul class="info-contact">
+<li class="address">433 E 13th St, New York, NY 10009, United State of America</li>
+<li class="phone"><label>Hotline:</label>888 9344 6000 - 888 1234 6789</li>
+<li class="email"><label>Email:</label>amabook-store@magentech.com</li>
+</ul>
+</div>
+<div class="col-sm-6">
+<h3><a href="#">Smartech - Los Angeles</a></h3>
+<ul class="info-contact">
+<li class="address">433 E 13th St, New York, NY 10009, United State of America</li>
+<li class="phone"><label>Hotline:</label>888 9344 6000 - 888 1234 6789</li>
+<li class="email"><label>Email:</label>amabook-store@magentech.com</li>
+</ul>
+</div>
+<div class="col-sm-6">
+<h3><a href="#">Smartech - London</a></h3>
+<ul class="info-contact">
+<li class="address">433 E 13th St, New York, NY 10009, United State of America</li>
+<li class="phone"><label>Hotline:</label>888 9344 6000 - 888 1234 6789</li>
+<li class="email"><label>Email:</label>amabook-store@magentech.com</li>
+</ul>
+</div>
+<div class="col-sm-6">
+<h3><a href="#">Smartech - Viet Nam</a></h3>
+<ul class="info-contact">
+<li class="address">433 E 13th St, New York, NY 10009, United State of America</li>
+<li class="phone"><label>Hotline:</label>888 9344 6000 - 888 1234 6789</li>
+<li class="email"><label>Email:</label>amabook-store@magentech.com</li>
+</ul>
+</div>
+</div>]]></content>
+      <is_active>1</is_active>
+      <store_id>0</store_id>
+    </cms_item>
+    <cms_item>
+      <title>Theme - Newsletter Popup Social</title>
+      <identifier>social-newsletter-popup</identifier>
+      <content><![CDATA[<ul class="social-list">
+<li><a href="http://www.facebook.com/MagenTech" title="title"><span class="icon-facebook1">Facebook</span></a></li>
+<li><a href="https://twitter.com/magentech" title="title"><span class="icon-twitter1">Twitter</span></a></li>
+<li><a href="https://plus.google.com/u/0/+Smartaddons" title="title"><span class="icon-google-plus">Google</span></a></li>
+<li><a href="https://plus.google.com/u/0/+Smartaddons" title="title"><span class="icon-tumblr">Tumblr</span></a></li>
+<li><a href="https://plus.google.com/u/0/+Smartaddons" title="title"><span class="icon-pinterest">Pinterest</span></a></li>
+<li><a href="https://plus.google.com/u/0/+Smartaddons" title="title"><span class="icon-linkedin">Linkedin</span></a></li>
+</ul>
+]]></content>
+      <is_active>1</is_active>
+      <store_id>0</store_id>
+    </cms_item>
+  </blocks>
+</root>

@@ -1,0 +1,193 @@
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+
+.post-list-wrapper .post-list {
+    padding: 0;
+    margin: 0 -15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.post-holder {
+    background: none;
+    margin-bottom: 0px;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    padding: 0 15px;
+    margin-bottom: 10px;
+    border: 0px;
+    border-radius: 0px;
+}
+
+.post-content.post-custom .post-description .post-ftimg-hld {
+    width: 100%;
+    margin: 0 0 20px;
+}
+
+.post-holder .post-header .post-info{
+    font-size: 86%;
+    clear: both;
+}
+.post-holder .post-header .post-info .value{
+    font-style: normal;
+}
+.post-content.post-custom .post-description .post-title-holder {
+    display: table;
+    width: 100%;
+}
+
+.post-content.post-custom .post-description .post-title {
+    margin: 0 0 15px;
+    padding: 0;
+    font-size: 128%;
+}
+
+.post-content.post-custom .post-description .post-title a {
+    font-size: 114.285%;
+    font-weight: 600;
+    color: #222;
+}
+
+.post-list .post-holder .post-header .addthis_toolbox {
+    padding-top: 2px;
+}
+
+.post-content.post-custom .post-description .post-info-blog .dash {
+    display: none;
+}
+
+.post-content.post-custom .post-description .post-info-blog .post-categories {
+    display: none;
+}
+
+.post-content.post-custom .post-description .post-info-blog .post-text-hld {
+    display: table;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #999;
+}
+
+.post-content.post-custom .post-description .post-info-blog .post-read-more {
+    display: table;
+    float: none;
+    padding: 9px 30px;
+    color: #222;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.post-content .post-description .post-ftimg-hld{
+    float: none;
+    margin: 20px 0;
+    width: 100%;
+}
+.post-holder .post-header .post-info .item {
+    margin-right: 5px;
+}
+
+.post-holder .post-header .post-info .label {
+    font-weight: 400;
+    color: #999;
+}
+
+
+
+.widget.block .block-content{
+    padding: 10px 20px;
+}
+.widget.block.blog-search .block-content {
+    background: #f7f7f7;
+    border: 1px solid #ddd !important;
+    border-radius:5px;
+}
+
+.widget.block.block-rss .block-title {
+    background: none;
+    padding: 0;
+}
+
+.widget.block.block-rss .block-title strong {
+    text-transform: none;
+}
+
+.widget.block-rss .rss-icon {
+    padding-right: 7px;
+    margin-top: 2px;
+}
+
+.widget.block-recent-posts .block-content .item {
+   padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+.widget.block-categories ul {
+    list-style: initial;
+    padding-left:0;
+}
+
+.widget.block-categories ul ul {
+    margin-left:20px;
+}
+
+.widget.block-categories ul,
+.widget.block-categories li {
+    margin: 0;
+    padding: 0;
+}
+.widget.block-categories ul{
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    margin: 0;
+}
+.widget.block-categories li{
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    padding: 8px 0;
+    list-style: none;
+}
+.widget.block-categories li a {
+    font-size: 92.85%;
+}
+.widget.block-categories li:last-child,.widget.block-recent-posts .block-content .item:last-child {
+    border: none;
+}
+.c-replyform {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.c-replyform.no-active textarea {
+    height: 70px !important;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
+.c-replyform textarea {
+    height: 100px !important;
+    border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+}
+
+.c-replyform button {
+    padding: 6px 20px !important;
+    margin-top: 0 !important;
+}
+
+.rtl-layout .post-list .post-header .post-title {
+    float: right;
+}
+
+.rtl-layout .post-list .post-holder .post-header .addthis_toolbox {
+    float: left;
+}
+
+@media (min-width: 768px) {
+   
+}
+
+@media (max-width: 767px) {
+    
+}

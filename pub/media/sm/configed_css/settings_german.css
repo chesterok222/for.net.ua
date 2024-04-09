@@ -1,0 +1,564 @@
+
+/**
+* THIS FILE IS GENERATED AUTOMATICALLY WHEN SAVING CONFIGURE. YOUR DATA WILL BE LOST WHEN YOU EDIT THIS FILE
+*/
+
+/**
+* Body, text color, background color, background image, font family, font size, font weight
+*/
+
+body{
+background-color: #FFFFFF;
+color: #666666;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;font-size: 14px;
+}
+
+/**
+* Link, link hover
+*/
+
+a,
+.alink{
+color: #444444;
+}
+
+a:hover,
+.alink:hover{
+color: #3399FE;
+}
+
+/**
+* THEME COLOR CUSTOM, BACKUP THIS FILE BEFORE UPDATE SM_THEMECORE MODULE
+*/
+/**
+* $themeColor, $themeColorDarken, $textOnThemeColor, $linkOnThemeColor, $linkHoverOnThemeColor
+*/
+
+/**
+* Background color
+*/
+.time-countdown-slide .time-ranger .time-pass,
+.header-mobile .mobile-top,.background-color-theme,
+.sm-notfound .back2home,
+.bonus-title:before,
+.about-container .our-member .image-content .member-social li a:hover,
+.contact-us-info .contact-social li a:hover,
+.w-newsletter .action-newsletter button,
+.bottom-product-slider .block-title strong:before,
+.product-info-main .product-social-links .action:hover, .product-info-main .product-addto-links .action:hover,
+.product-info-main .box-tocart .action.tocart, .product-options-bottom .box-tocart .action.tocart,
+
+.post-content .post-description .post-info-blog .post-read-more:hover,
+
+.sidebar .block .block-title,
+#price-slider .ui-slider-range,
+#price-slider .ui-slider-handle,
+.product-1-style .products-grid .product-item-info:hover .product-item-details .product-item-actions .actions-primary .tocart,
+.product-1-style .products-grid .product-item-info .product-item-details .product-item-actions .actions-primary .tocart,
+.product-2-style .products-grid .product-item-info .product-item-details .product-item-actions .actions-primary .tocart,
+.product-1-style .products-grid .product-item-info .image-product .quickview-handler:hover,
+.product-2-style .products-grid .product-item-info .image-product .quickview-handler:hover,
+.vertical-menu-block .sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu>li.sm_megamenu_actived>a.sm_megamenu_head, 
+.vertical-menu-block .sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu>li:hover>a.sm_megamenu_head,
+.products-list .product-item-info .image-product .quickview-handler:hover,
+
+.group-deal-1 .product-item-info .product-item-details .product-item-actions .actions-primary .tocart:hover,
+.group-deal-1 .product-item-info .product-item-details .product-item-actions .actions-secondary .action:hover,
+
+.social-footer ul li a:hover,
+.footer-1-style .subcribe-footer-content .block-subscribe-footer .action-button button,
+
+.header-style-1 .form.minisearch .actions button,
+.header-style-1 .vertical-menu-block .block-title-menu,
+.cms-index-index .header-style-1 .horizontal-megamenu-block .sm_megamenu_menu > li.home-item > a:before,
+.header-style-1 .horizontal-megamenu-block .sm_megamenu_menu > li:hover > a:before,
+.header-style-1 .horizontal-megamenu-block .sm_megamenu_menu > li.sm_megamenu_actived > a:before,
+.header-style-1 .header-wishlist a span,
+.header-style-1.header-container .minicart-wrapper .action.showcart .counter .counter-number,
+.header-style-2 .header-wishlist a span,
+.header-style-2.header-container .minicart-wrapper .action.showcart .counter .counter-number,
+.listingtab-style-1 .sm-listing-tabs .ltabs-tabs-container .ltabs-tabs li.tab-sel,
+.listingtab-style-1 .sm-listing-tabs .ltabs-tabs-container .ltabs-tabs li:hover,
+.header-style-2 .form.minisearch .actions button,
+.header-style-2 .vertical-menu-block .block-title-menu,
+.header-style-2 .horizontal-block .promotion-block a:hover,
+.title-style-2 .block .block-title strong:after,
+.post-slider-1 .info-post .post-read-more a:hover,
+.listingtab-style-2 .ltabs-tabs-container .ltabs-tabs li:after,
+.listingtab-style-2 .ltabs-tabs-container .ltabs-tabs li:before,
+.listingtab-style-2 .owl-theme .owl-dots .owl-dot:hover span,
+.listingtab-style-2 .owl-theme .owl-dots .owl-dot.active span,
+.client-newletters .our-client-say .owl-theme .owl-dots .owl-dot:hover span,
+.client-newletters .our-client-say .owl-theme .owl-dots .owl-dot.active span,
+.newltters-v2 .block-subscribe-footer .action-button button,
+.about-client-say .item:before{
+background-color: #3399FE;
+}
+
+.text-branner .hot-item:after{
+border-bottom: 63px solid #3399FE;
+}
+
+
+/**
+* Border color
+*/
+.default-style .resp-tabs-list li.active,
+.default-style .resp-tabs-list li:hover,
+.block-brands-2 .item:hover,
+.list-slider-1 .product-type-list .image-product:hover,
+.slider-categories-1 .block-categories .cat-wrap-slider .item .content-box:hover,
+.group-product-slider-1 .block-content .slider-thumbs .slick-current .item-thumb,
+.footer-1-style .block-footer-title:after,.footer-2-style .block-footer-title:after,.block-footer .block-footer-content ul li a:hover,
+.group-product-slider .item-inner .product-item-details .deals-countdown .deals-time .num-time,
+.group-product-slider .item-inner .image-thumbs .thumbs-product .item-img.thumb-active,
+.group-product-slider .item-inner .image-thumbs .thumbs-product .item-img:hover,
+.block-slider-post .item .info-post .post-read-more a:hover,
+.products-deals .products-grid .product-item-info .deals-countdown .deals-time,
+.fotorama__thumb-border{
+border-color: #3399FE;
+}
+
+/**
+* Background color and border color
+*/
+
+.modes .modes-mode:hover,
+.modes .modes-mode.active,
+.pages .item:hover,
+.pages .item.current,
+
+.nav-style-1 .owl-theme .owl-nav [class*="owl-"]:hover,
+.nav-style-2 .owl-theme .owl-nav [class*="owl-"]:hover,
+.group-product-slider-1 .slick-prev:hover, .group-product-slider-1 .slick-next:hover,
+.product-1-style .products-grid .product-item-info .product-item-details .product-item-actions .actions-secondary .action:hover,
+.product-2-style .products-grid .product-item-info .product-item-details .product-item-actions .action:hover,
+.products-list .product-item-info .product-item-details .product-item-actions .actions-primary .tocart:hover,
+.products-list .product-item-info .product-item-details .product-item-actions .actions-secondary .action:hover,
+.socials-popup ul li a:hover,
+.about-policy .item:hover{
+background-color: #3399FE;
+border-color: #3399FE;
+}
+
+.gallery-placeholder .fotorama__thumb__arr:hover,
+.group-product-slider .item-inner .product-item-details .product-item-actions .actions-primary .tocart:hover,
+.listingtab-style-list .products-grid .product-item-info .product-item-details .product-item-actions .actions-primary .tocart:hover,
+.product-info-main .product-addto-links .action:hover{
+background-color: #3399FE!important;
+border-color: #3399FE!important;
+}
+
+/**
+* Background darken color
+*/
+
+.w-newsletter .action-newsletter button:hover,
+.product-1-style .products-grid .product-item-info .product-item-details .product-item-actions .actions-primary .tocart:hover,
+.art-style-1 .smas-btn .btn.btn-search:hover,
+.text-branner .text-offer .explorer:hover{
+background-color: #308fed;
+}
+
+/**
+* Link hover color
+*/
+.post-content.post-custom .post-description .post-title a:hover,
+.mega-feature-content ul li a:hover,
+.minicart-wrapper .minicart-items .product-item-name a:hover,
+
+.sidebar .block.filter .filter-options .filter-options-content ol li a:hover,
+.block-cat-1 .child-cat .sub-cats li a:hover,
+{
+color: #3399FE;
+}
+
+.block-cat-1 .child-cat .sub-cats li a:hover:before{
+background-color: #3399FE;
+}
+
+/**
+* Text theme color
+*/
+
+.text-theme-color,
+.contact-us-info .info-contact li:before,
+.header-style-1 .language-currency .switcher .switcher-content:hover .action-switcher,
+.block-footer .footer-contact ul li:before,.footer-bottom address a,
+.cms-index-index .header-style-1 .horizontal-megamenu-block .sm_megamenu_menu > li.home-item > a,
+.header-style-1 .horizontal-megamenu-block .sm_megamenu_menu > li:hover > a,
+.header-style-1 .horizontal-megamenu-block .sm_megamenu_menu > li.sm_megamenu_actived > a,
+.header-style-1 .header-wishlist a:hover:before, .header-style-1.header-container .minicart-wrapper .action.showcart:hover:after,
+.header-style-1.header-container .minicart-wrapper .action.showcart:hover,
+.header-style-1.header-container .minicart-wrapper .action.showcart:hover .text,
+.customer-action:hover .toplinks-wrapper:after, .customer-action:hover .customer-links > span,
+.header-style-1 .header-top .header-topleft ul li:before,
+.header-style-1 .header-top .social-top ul li a:hover,
+.group-product-slider .item-inner .product-item-details .deals-countdown .deals-time .num-time,
+.block-footer .block-footer-content ul li a:hover,
+.block-slider-post .item .info-post .post-title a:hover,
+.cms-index-index .header-style-2 .horizontal-megamenu-block .sm_megamenu_menu > li.home-item > a,
+.header-style-2 .horizontal-megamenu-block .sm_megamenu_menu > li:hover > a,
+.header-style-2 .horizontal-megamenu-block .sm_megamenu_menu > li.sm_megamenu_actived > a,
+.header-style-2.header-container .minicart-wrapper .action.showcart .price-minicart,
+.header-style-2 .email-header:before, .header-style-2 .email-header a:hover,
+.products-deals .products-grid .product-item-info .deals-countdown .deals-time .num-time,
+.our-client-say .item .client-info:after,
+.customer-action ul.header.links li a:hover,
+.mega-feature-content ul li a:hover,
+.post-holder .post-header .post-info .value,
+.post-holder .post-header .post-info .value a,
+.post-content.post-custom .post-description .post-title a:hover,
+.about-top a.lear-more:hover,
+.product.data.items.accordion-style .item.title.resp-accordion.active a,
+.product.data.items.accordion-style .item.title.resp-accordion:hover a,
+.default-style .resp-tabs-list li.active a,
+.default-style .resp-tabs-list li:hover a,
+.vertical-style .resp-tabs-list li.active a,
+.vertical-style .resp-tabs-list li:hover a,
+.product-2-style .price-box .special-price .price,.product-2-style .price-box .price,
+.nav-style-3 .owl-theme .owl-nav [class*="owl-"]:hover{ 
+color: #3399FE;
+}
+
+
+/**
+* Text on theme color
+*/
+.sidebar .block .block-title strong,
+.sidebar .block.filter .block-title.filter-title:before,
+.about-container .our-member .image-content .member-social li a:hover,
+.contact-us-info .contact-social li a:hover,
+.post-content.post-custom .post-description .post-info-blog .post-read-more:hover,
+.header-style-1 .vertical-menu-block .block-title-menu,
+.header-style-1 .block-search .form.minisearch .actions button,
+.header-style-2 .block-search .form.minisearch .actions button,
+.nav-style-1 .owl-theme .owl-nav [class*="owl-"]:hover,
+.nav-style-2 .owl-theme .owl-nav [class*="owl-"]:hover,
+.art-style-1 .smas-btn .btn.btn-search,
+.footer-1-style .subcribe-footer-content .block-subscribe-footer .action-button button,
+.social-footer ul li a:hover,
+.post-slider-1 .info-post .post-read-more a:hover,
+.modes .modes-mode:hover,
+.modes .modes-mode.active,
+.pages .item:hover a,
+.pages .item.current strong,
+.product-1-style .products-grid .product-item-info .image-product .quickview-handler:hover,
+.product-1-style .products-grid .product-item-info:hover .product-item-details .product-item-actions .actions-primary .tocart,
+.product-1-style .products-grid .product-item-info .product-item-details .product-item-actions .actions-secondary .action:hover,
+
+.group-deal-1 .timer-content,
+.group-deal-1 .product-item-info .product-item-details .product-item-actions .actions-primary .tocart:hover,
+.group-deal-1 .product-item-info .product-item-details .product-item-actions .actions-secondary .action:hover,
+.text-branner .hot-item,
+.text-branner .text-offer .explorer,
+.listingtab-style-1 .sm-listing-tabs .ltabs-tabs-container .ltabs-tabs li.tab-sel,
+.listingtab-style-1 .sm-listing-tabs .ltabs-tabs-container .ltabs-tabs li:hover{
+color: #FFFFFF;
+}
+
+.pages .item:hover .action:before,
+.product-info-main .box-tocart .action.tocart,
+.product-options-bottom .box-tocart .action.tocart,
+.product-info-main .product-social-links .action:hover,
+.product-info-main .product-addto-links .action:hover,
+.group-product-slider-1 .block-title strong,
+.group-product-slider-1 .slick-prev:hover, .group-product-slider-1 .slick-next:hover{
+color: #FFFFFF!important;
+}
+
+.header-mobile .mobile-menu > a span{
+background-color: #FFFFFF;
+}
+
+.minicart-mobile .minicart-wrapper .action.showcart:before{
+color: #FFFFFF;
+}
+
+
+/**
+* Link on theme color
+*/
+.vertical-menu-block .sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu>li.sm_megamenu_actived>a.sm_megamenu_head, 
+.vertical-menu-block .sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu>li:hover>a.sm_megamenu_head,
+.vertical-menu-block .sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu>li.sm_megamenu_actived>a.sm_megamenu_head span:before, 
+.vertical-menu-block .sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu>li:hover>a.sm_megamenu_head span:before{
+	color: #FFFFFF;
+}
+
+/**
+* Link hover on theme color
+*/
+
+
+/**
+* Elements google font
+*/
+
+
+/**
+* Layout
+*/
+
+@media (min-width: 1024px) {
+    body .container,
+    body .page-main{
+    max-width: 1600px;
+    }
+
+}
+
+/**
+* Show add to cart, compare, wishlist product
+*/
+
+
+
+
+/**
+* Listing Layout
+*/
+
+@media (min-width: 1921px) {
+.page-layout-1column .products.wrapper.products-grid .product-items .product-item{
+width: 25%;
+}
+
+.page-layout-1column .products.wrapper.products-grid .product-items .product-item:nth-child(4n+1){
+clear: both;
+}
+
+.page-layout-2columns-left .products.wrapper.products-grid .product-items .product-item,
+.page-layout-2columns-right .products.wrapper.products-grid .product-items .product-item{
+width: 20%;
+}
+
+.page-layout-2columns-left .products.wrapper.products-grid .product-items .product-item:nth-child(5n+1),
+.page-layout-2columns-right .products.wrapper.products-grid .product-items .product-item:nth-child(5n+1){
+clear: both;
+}
+
+.page-layout-3columns .products.wrapper.products-grid .product-items .product-item{
+width: 50%;
+}
+
+.page-layout-3columns .products.wrapper.products-grid .product-items .product-item:nth-child(2n+1){
+clear: both;
+}
+
+}
+
+
+@media (min-width: 1681px) and (max-width: 1920px) {
+.page-layout-1column .products.wrapper.products-grid .product-items .product-item{
+width: 25%;
+}
+
+.page-layout-1column .products.wrapper.products-grid .product-items .product-item:nth-child(4n+1){
+clear: both;
+}
+
+.page-layout-2columns-left .products.wrapper.products-grid .product-items .product-item,
+.page-layout-2columns-right .products.wrapper.products-grid .product-items .product-item{
+width: 20%;
+}
+
+.page-layout-2columns-left .products.wrapper.products-grid .product-items .product-item:nth-child(5n+1),
+.page-layout-2columns-right .products.wrapper.products-grid .product-items .product-item:nth-child(5n+1){
+clear: both;
+}
+
+.page-layout-3columns .products.wrapper.products-grid .product-items .product-item{
+width: 50%;
+}
+
+.page-layout-3columns .products.wrapper.products-grid .product-items .product-item:nth-child(2n+1){
+clear: both;
+}
+}
+
+@media (min-width: 1441px) and (max-width: 1680px) {
+
+.page-layout-1column .products.wrapper.products-grid .product-items .product-item{
+width: 25%;
+}
+
+.page-layout-1column .products.wrapper.products-grid .product-items .product-item:nth-child(4n+1){
+clear: both;
+}
+
+.page-layout-2columns-left .products.wrapper.products-grid .product-items .product-item,
+.page-layout-2columns-right .products.wrapper.products-grid .product-items .product-item{
+width: 25%;
+}
+
+.page-layout-2columns-left .products.wrapper.products-grid .product-items .product-item:nth-child(4n+1),
+.page-layout-2columns-right .products.wrapper.products-grid .product-items .product-item:nth-child(4n+1){
+clear: both;
+}
+
+.page-layout-3columns .products.wrapper.products-grid .product-items .product-item{
+width: 50%;
+}
+
+.page-layout-3columns .products.wrapper.products-grid .product-items .product-item:nth-child(2n+1){
+clear: both;
+}
+}
+
+@media (min-width: 1200px) and (max-width: 1440px) {
+
+.page-layout-1column .products.wrapper.products-grid .product-items .product-item{
+width: 25%;
+}
+
+.page-layout-1column .products.wrapper.products-grid .product-items .product-item:nth-child(4n+1){
+clear: both;
+}
+
+.page-layout-2columns-left .products.wrapper.products-grid .product-items .product-item,
+.page-layout-2columns-right .products.wrapper.products-grid .product-items .product-item{
+width: 33.333333333333%;
+}
+
+.page-layout-2columns-left .products.wrapper.products-grid .product-items .product-item:nth-child(3n+1),
+.page-layout-2columns-right .products.wrapper.products-grid .product-items .product-item:nth-child(3n+1){
+clear: both;
+}
+
+.page-layout-3columns .products.wrapper.products-grid .product-items .product-item{
+width: 50%;
+}
+
+.page-layout-3columns .products.wrapper.products-grid .product-items .product-item:nth-child(2n+1){
+clear: both;
+}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+.page-layout-1column .products.wrapper.products-grid .product-items .product-item{
+width: 33.333333333333%;
+}
+
+.page-layout-1column .products.wrapper.products-grid .product-items .product-item:nth-child(3n+1){
+clear: both;
+}
+
+.page-layout-2columns-left .products.wrapper.products-grid .product-items .product-item,
+.page-layout-2columns-right .products.wrapper.products-grid .product-items .product-item{
+width: 33.333333333333%;
+}
+
+.page-layout-2columns-left .products.wrapper.products-grid .product-items .product-item:nth-child(3n+1),
+.page-layout-2columns-right .products.wrapper.products-grid .product-items .product-item:nth-child(3n+1){
+clear: both;
+}
+
+.page-layout-3columns .products.wrapper.products-grid .product-items .product-item{
+width: 50%;
+}
+
+.page-layout-3columns .products.wrapper.products-grid .product-items .product-item:nth-child(2n+1){
+clear: both;
+}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+.page-layout-1column .products.wrapper.products-grid .product-items .product-item{
+width: 33.333333333333%;
+}
+
+.page-layout-1column .products.wrapper.products-grid .product-items .product-item:nth-child(3n+1){
+clear: both;
+}
+
+.page-layout-2columns-left .products.wrapper.products-grid .product-items .product-item,
+.page-layout-2columns-right .products.wrapper.products-grid .product-items .product-item{
+width: 33.333333333333%;
+}
+
+.page-layout-2columns-left .products.wrapper.products-grid .product-items .product-item:nth-child(3n+1),
+.page-layout-2columns-right .products.wrapper.products-grid .product-items .product-item:nth-child(3n+1){
+clear: both;
+}
+
+.page-layout-3columns .products.wrapper.products-grid .product-items .product-item{
+width: 33.333333333333%;
+}
+
+.page-layout-3columns .products.wrapper.products-grid .product-items .product-item:nth-child(3n+1){
+clear: both;
+}
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+.page-layout-1column .products.wrapper.products-grid .product-items .product-item{
+width: 50%;
+}
+
+.page-layout-1column .products.wrapper.products-grid .product-items .product-item:nth-child(2n+1){
+clear: both;
+}
+
+.page-layout-2columns-left .products.wrapper.products-grid .product-items .product-item,
+.page-layout-2columns-right .products.wrapper.products-grid .product-items .product-item{
+width: 50%;
+}
+
+.page-layout-2columns-left .products.wrapper.products-grid .product-items .product-item:nth-child(2n+1),
+.page-layout-2columns-right .products.wrapper.products-grid .product-items .product-item:nth-child(2n+1){
+clear: both;
+}
+
+.page-layout-3columns .products.wrapper.products-grid .product-items .product-item{
+width: 50%;
+}
+
+.page-layout-3columns .products.wrapper.products-grid .product-items .product-item:nth-child(2n+1){
+clear: both;
+}
+}
+
+@media (max-width: 480px) {
+.page-layout-1column .products.wrapper.products-grid .product-items .product-item{
+width: 100%;
+}
+
+.page-layout-1column .products.wrapper.products-grid .product-items .product-item:nth-child(1n+1){
+clear: both;
+}
+
+.page-layout-2columns-left .products.wrapper.products-grid .product-items .product-item,
+.page-layout-2columns-right .products.wrapper.products-grid .product-items .product-item{
+width: 100%;
+}
+
+.page-layout-2columns-left .products.wrapper.products-grid .product-items .product-item:nth-child(1n+1),
+.page-layout-2columns-right .products.wrapper.products-grid .product-items .product-item:nth-child(1n+1){
+clear: both;
+}
+
+.page-layout-3columns .products.wrapper.products-grid .product-items .product-item{
+width: 100%;
+}
+
+.page-layout-3columns .products.wrapper.products-grid .product-items .product-item:nth-child(1n+1){
+clear: both;
+}
+}
+
+@media (max-width: 1023px) {
+.header-container {
+display: none;
+}
+
+.header-mobile {
+display: block;
+}
+}
+
+/**
+* Custom CSS
+*/
+

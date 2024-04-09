@@ -1,0 +1,94 @@
+<?php
+$_config = $this->helper('Sm\Themecore\Helper\Data');
+?>
+
+<div class="header-container header-style-1">
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-8">
+                     <?php  echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('contact-header')->toHtml(); ?>
+                </div>
+
+                <div class="col-xl-6 col-lg-4">
+
+                    <div class="language-currency">
+                        <?php echo $this->getChildHtml("store_language"); ?>
+                        <?php echo $this->getChildHtml("currency"); ?>
+                    </div>
+                     <?php  echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('social-header')->toHtml(); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-middle">
+        <div class="container">
+            <div class="middle-content">
+                <div class="logo-container">
+                    <?php echo $this->getChildHtml("logo"); ?>
+                </div>
+
+                <div class="right-container">
+                    <div class="right-content">
+                        <?php echo $this->getChildHtml("search-header"); ?>
+                        <?php  echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('hotline-header')->toHtml(); ?>
+                        <div class="customer-action">
+                            <div class="customer-links" data-move="customer-mobile">
+                                <span><?php echo __('my account')?>  </span>
+                                 <?php echo $this->getChildHtml("toplinks-header"); ?>
+                            </div>
+                         </div>
+                        <div class="header-wishlist link wishlist" data-bind="scope: 'wishlist'">
+
+                            <a href="<?php echo $this->getUrl('wishlist') ?>">
+                                 <!-- ko text if: wishlist().counter --><span data-bind="text: wishlist().counter" class="counter qty"></span><!-- /ko -->
+                                <?php echo __('my wishlist')?>    
+                            </a>
+                              
+                        </div>
+                        <div class="minicart-header" data-move="minicart-mobile">
+                            <?php echo $this->getChildHtml("minicart"); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-bottom ontop-element">
+        <div class="container">
+            <div class="desktop-menu">
+                <div class="vertical-block">
+                    <?php
+                    if ($_config->getGeneral('navigation_group/menu_style') == 'megamenu') {
+                        echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('megamenu-vertical')->toHtml();
+                    } else {
+                        echo $this->getChildHtml("vertical-css");
+                    }
+                    ?>
+                </div>
+
+                <div class="horizontal-block">
+                    <?php 
+                        echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('megamenu-horizontal')->toHtml(); 
+                        echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header-promotion')->toHtml();
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "wishlist": {
+                    "component": "Magento_Wishlist/js/view/wishlist"
+                }
+            }
+        }
+    }
+}
+</script>

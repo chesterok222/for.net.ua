@@ -1,0 +1,93 @@
+<?php
+$_config = $this->helper('Sm\Themecore\Helper\Data');
+?>
+
+<div class="header-container header-style-2">
+
+    <div class="header-top">
+        <div class="container">
+            <div class="top-content clearfix">
+                <div class="logo-container">
+                    <?php echo $this->getChildHtml("logo"); ?>
+                </div>
+
+                <div class="right-container">
+                    <div class="right-content">
+                        <div class="vertical-block">
+                            <?php
+                            if ($_config->getGeneral('navigation_group/menu_style') == 'megamenu') {
+                                echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('megamenu-vertical')->toHtml();
+                            } else {
+                                echo $this->getChildHtml("vertical-css");
+                            }
+                            ?>
+                        </div>
+                        <?php echo $this->getChildHtml("search-header"); ?>
+                        <div class="customer-action">
+                            <div class="customer-links" data-move="customer-mobile">
+                            <?php
+                                $login_customer =  $block->getLayout()->createBlock('Magento\Customer\Block\Account\Customer');
+                            ?>
+                             <ul  class="header links">    
+                            
+                            <?php if($login_customer->customerLoggedIn()){?>
+                               <li> <a href="<?php echo $this->getUrl('customer/account/logout')?>" title="<?php echo __('Logout')?>"><?php echo __('Logout')?></a></li> 
+                            <?php } else {?>
+                                <li><a  href="<?php echo $this->getUrl('customer/account/login')?>" title="<?php echo __('Login')?>"><?php echo __('Login')?> </a> </li>
+                                <li class="creat"><a  href="<?php echo $this->getUrl('customer/account/create')?>" title="<?php echo __('Register')?>"><?php echo __('Register')?></a></li> 
+                            <?php } ?>
+                             </ul>
+                            </div>
+                         </div>
+                        <div class="header-wishlist link wishlist d-none d-xl-block" data-bind="scope: 'wishlist'">
+
+                            <a href="<?php echo $this->getUrl('wishlist') ?>">
+                                 <!-- ko text if: wishlist().counter --><span data-bind="text: wishlist().counter" class="counter qty"></span><!-- /ko -->
+                                <?php echo __('my wishlist')?>    
+                            </a>
+                              
+                        </div>
+                        <div class="minicart-header" data-move="minicart-mobile">
+                            <?php echo $this->getChildHtml("minicart"); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-bottom ontop-element">
+        <div class="container">
+            <div class="row">
+                <div class="desktop-menu col-lg-8">
+                    <div class="horizontal-block">
+                        <?php 
+                            echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('megamenu-horizontal')->toHtml(); 
+                        ?>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    
+                     <div class="language-currency">
+                        <?php echo $this->getChildHtml("store_language"); ?>
+                        <?php echo $this->getChildHtml("currency"); ?>
+                    </div>
+                     <?php  echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('contact-header-v2')->toHtml(); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "wishlist": {
+                    "component": "Magento_Wishlist/js/view/wishlist"
+                }
+            }
+        }
+    }
+}
+</script>

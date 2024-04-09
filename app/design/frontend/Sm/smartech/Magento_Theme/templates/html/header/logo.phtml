@@ -1,0 +1,30 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * @var \Magento\Theme\Block\Html\Header\Logo $block
+ */
+?>
+<?php $storeName = $block->getThemeName() ? $block->getThemeName() : $block->getLogoAlt(); ?>
+
+<h1 class="logo-content">
+    <strong>
+        <?= /* @escapeNotVerified */
+        $storeName ?>
+    </strong>
+
+    <a class="logo" href="<?php echo $block->getUrl(''); ?>" title="<?php /* @escapeNotVerified */
+    echo $storeName ?>">
+        <img alt=" <?php /* @escapeNotVerified */
+             echo $block->getLogoAlt() ;?>" src="<?php /* @escapeNotVerified */
+        echo $block->getLogoSrc() ?>"
+            <?php echo $block->getLogoWidth() ? 'width="' . $block->getLogoWidth() . '"' : '' ?>
+            <?php echo $block->getLogoHeight() ? 'height="' . $block->getLogoHeight() . '"' : '' ?>
+        />
+    </a>
+</h1>
