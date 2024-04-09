@@ -372,7 +372,7 @@ class ProductImport
                     $storeLabels[$this->uaStore->getStoreId()] = $this->getLabelObject($this->uaStore->getStoreId(), $uaLabel);
                 }
 
-                $ean = $this->getValueBy($ua, $option->getLabel(), 'Manufacturer', 'Manufacturer');
+                $ean = $this->getValueBy($ua, $option->getLabel(), 'Manufacturer', 'Ean');
                 if ($ean) {
                     $manufacturer = $this->getValueBy($ru, $ean, 'Ean', 'Manufacturer');
                     if ($manufacturer) {
