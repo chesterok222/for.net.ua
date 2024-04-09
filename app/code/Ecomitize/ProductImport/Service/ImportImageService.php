@@ -53,7 +53,7 @@ class ImportImageService
      *
      * @return bool
      */
-    public function execute($product, $imageUrl, $visible = false, $imageType = [])
+    public function execute($product, $imageUrl, $exclude = false, $imageType = [])
     {
         if (!$imageUrl) {
             return false;
@@ -73,7 +73,7 @@ class ImportImageService
         $result = $this->file->read($imageUrl, $newFileName);
         if ($result) {
             /** add saved file to the $product gallery */
-            $product->addImageToMediaGallery($newFileName, $imageType, true, $visible);
+            $product->addImageToMediaGallery($newFileName, $imageType, true, $exclude);
             $product->save();
         }
 

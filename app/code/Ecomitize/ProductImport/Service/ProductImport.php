@@ -266,7 +266,7 @@ class ProductImport
             $product->save();
         }
 
-        $this->importImageService->execute($product, $arrayProduct['Image_URL'], $visible = true, $imageType = ['image', 'small_image', 'thumbnail', 'swatch_image']);
+        $this->importImageService->execute($product, $arrayProduct['Image_URL'], $exclude = false, $imageType = ['image', 'small_image', 'thumbnail', 'swatch_image']);
 
         return $product;
     }
