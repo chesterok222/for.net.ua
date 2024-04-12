@@ -20,7 +20,7 @@ $_config = $this->helper('Sm\Themecore\Helper\Data');
 $_productCollection = $block->getLoadedProductCollection();
 $_helper            = $this->helper('Magento\Catalog\Helper\Output');
 $_config_theme     = $this->helper('Sm\Smartech\Helper\Data');
-$product_style       = $_config_theme->getThemeLayout('product_style'); 
+$product_style       = $_config_theme->getThemeLayout('product_style');
 
 ?>
 <?php if (!$_productCollection->count()): ?>
@@ -156,7 +156,8 @@ $product_style       = $_config_theme->getThemeLayout('product_style');
             <?php endforeach; ?>
         </ol>
     </div>
-    <?= $block->getToolbarHtml() ?>
+    <?= $block->getChildBlock('toolbar')->setIsBottom(true)->toHtml() ?>
+    <?php // phpcs:ignore Magento2.Legacy.PhtmlTemplate ?>
     <?php if (!$block->isRedirectToCartEnabled()) : ?>
         <script type="text/x-magento-init">
         {
