@@ -1,0 +1,11 @@
+<?php
+
+/** @var $viewModel \Ecomitize\BuyNow\ViewModel\BuyNow */
+
+$buyNowViewModel = $block->getBuyNowViewModel();
+
+?>
+
+<a href="#" data-buynow='<?= /* @noEscape */ $buyNowViewModel->getBuyNowParams($block->getProduct()) ?>'  type="submit" title="<?= __('Buy Now')?>" class="action buynow" id="product-buy-now-button">
+    <span><?= __('Buy Now')?></span>
+</a>

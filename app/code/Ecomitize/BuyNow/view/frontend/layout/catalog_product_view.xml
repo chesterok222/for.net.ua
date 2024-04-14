@@ -1,0 +1,11 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.addto">
+            <block class="Magento\Catalog\Block\Product\View" name="view.buy.now" before="-" template="Ecomitize_BuyNow::product/buy_now.phtml">
+                <arguments>
+                    <argument name="buy_now_view_model" xsi:type="object">Ecomitize\BuyNow\ViewModel\BuyNow</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

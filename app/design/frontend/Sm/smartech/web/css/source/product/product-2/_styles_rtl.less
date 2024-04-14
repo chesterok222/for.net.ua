@@ -56,7 +56,7 @@
             position: relative;
         }
 
-      
+
         .product-item-details {
             padding: 10px 0;
             text-align: center;
@@ -118,7 +118,7 @@
                             top:0;
                             left:5px;
                         }
-                        
+
                     }
                 }
 
@@ -150,7 +150,7 @@
 
                         &.towishlist{
                             &:after {
-                                background: url('../images/icon-product.png') no-repeat -37px -74px; 
+                                background: url('../images/icon-product.png') no-repeat -37px -74px;
                             }
                             &:hover:after{
                                 background-position:0 -74px;
@@ -163,6 +163,14 @@
                             }
                             &:hover:after{
                                 background-position:1px -38px;
+                            }
+                        }
+                        &.buynow{
+                            &:after {
+                                background: url('../images/icon-product.png') no-repeat  -43px 0px;
+                            }
+                            &:hover:after{
+                                background-position:1px 1px;
                             }
                         }
                     }
@@ -180,7 +188,7 @@
         &:hover {
             .image-product .product-item-photo{
                 .opacity(0.6);
-            }      
+            }
             .quickview-handler {
                 .opacity(1);
                 visibility: visible;
@@ -196,9 +204,9 @@
                 }
 
 
-            } 
-            
-            
+            }
+
+
         }
     }
 }

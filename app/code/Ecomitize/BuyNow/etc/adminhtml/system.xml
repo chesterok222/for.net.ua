@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="buy_now" showInDefault="1" showInStore="1" showInWebsite="1" translate="label" type="text">
+            <class>separator-top</class>
+            <label>Buy Now</label>
+            <tab>ecomitize</tab>
+            <resource>Ecomitize_BuyNow::config</resource>
+            <group id="email" showInDefault="1" type="text">
+                <label>Email</label>
+                <field id="template" sortOrder="10" showInDefault="1" translate="label" type="select">
+                    <label>Template</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+                <field id="send_to" translate="label comment" type="text" sortOrder="20" showInDefault="1">
+                    <label>Send Email To</label>
+                    <validate>validate-email</validate>
+                </field>
+                <field id="identity" translate="label" type="select" showInDefault="1" sortOrder="30" >
+                    <label>Email Sender</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

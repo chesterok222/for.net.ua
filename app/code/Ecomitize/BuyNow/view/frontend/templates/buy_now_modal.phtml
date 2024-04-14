@@ -1,0 +1,95 @@
+<div id="buy-now-modal">
+    <div class="modal-inner-content">
+        <form action="<?= $block->getUrl('buy_now/place/order');?>" method="post" id="bay-now-form" enctype="multipart/form-data" autocomplete="off" data-mage-init='{"validation":{}}' data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>">
+            <label for="telephone"><?= $block->escapeHtmlAttr(__('Phone Number')) ?></label>
+            <input data-validate="{required:true}" name="telephone" id="telephone" title="<?= $block->escapeHtmlAttr(__('Phone Number')) ?>" value="" class="input-text required validate-phone" type="text" />
+        </form>
+
+    </div>
+</div>
+
+<div id="result-success-buy-now-modal">
+    <div class="modal-inner-content">
+        <p><?= $block->escapeHtml(__('Order placed successfully.')) ?></p>
+    </div>
+</div>
+
+<div id="result-fail-buy-now-modal">
+    <div class="modal-inner-content">
+        <p><?= $block->escapeHtml(__('Something went wrong, try again later.')) ?></p>
+    </div>
+</div>
+
+<script>
+    require(
+        [
+            'jquery',
+            'Magento_Ui/js/modal/modal'
+        ],
+        function($, modal) {
+            var resultOptions = {
+                type: 'popup',
+                responsive: true,
+                innerScroll: true,
+                title: $.mage.__('Buy Now'),
+                buttons: [{
+                    text: $.mage.__('Close'),
+                    class: 'action',
+                    click: function (e) {
+                        this.closeModal();
+                    }
+                }]
+            };
+
+            var options = {
+                type: 'popup',
+                responsive: true,
+                innerScroll: true,
+                title: $.mage.__('Buy Now'),
+                buttons: [{
+                    text: $.mage.__('Submit'),
+                    class: 'action buy_now_submit_button',
+                    click: function (e) {
+                        if (!$('#bay-now-form').valid()) {
+                            return;
+                        }
+                        var formData = $("#bay-now-form").serializeArray();
+                        var postData = JSON.parse(e.currentTarget.getAttribute('data-buynow'));
+
+                        for ( var key in postData ) {
+                            formData.push({name: key, value: postData[key]});
+                        }
+
+                        jQuery.ajax({
+                            url: "<?= $block->getUrl('buy_now/place/order');?>",
+                            type: 'POST',
+                            data : $.param(formData),
+                            success: function(response){
+                                var modalSelector = '';
+                                if (response.success) {
+                                    modalSelector = '#result-success-buy-now-modal';
+                                } else {
+                                    modalSelector = '#result-fail-buy-now-modal';
+                                }
+                                modal(resultOptions, $(modalSelector));
+                                $(modalSelector).modal("openModal");
+                            },
+                            error: function(result){
+                                console.log('no response !');
+                            }
+                        });
+
+                        this.closeModal();
+                    }
+                }]
+            };
+
+            modal(options, $('#buy-now-modal'));
+            $(".buynow").on('click',function() {
+                $("#buy-now-modal").modal("openModal");
+
+                $('.buy_now_submit_button').attr('data-buynow', $(this).attr('data-buynow'));
+            });
+        }
+    );
+</script>
