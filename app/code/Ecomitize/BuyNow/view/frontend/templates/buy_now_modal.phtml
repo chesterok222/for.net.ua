@@ -53,7 +53,7 @@
                 responsive: true,
                 innerScroll: true,
                 modalClass: 'buy-now-modal',
-                title: $.mage.__('Buy Now'),
+                title: $.mage.__('<?= $block->escapeHtmlAttr(__('Buy Now')) ?>'),
                 buttons: [{
                     text: $.mage.__('Close'),
                     class: 'action',
@@ -71,7 +71,7 @@
                 responsive: true,
                 innerScroll: true,
                 modalClass: 'buy-now-modal',
-                title: $.mage.__('Buy Now'),
+                title: $.mage.__('<?= $block->escapeHtmlAttr(__('Buy Now')) ?>'),
                 buttons: [{
                     text: $.mage.__('Submit'),
                     class: 'action buy_now_submit_button',
