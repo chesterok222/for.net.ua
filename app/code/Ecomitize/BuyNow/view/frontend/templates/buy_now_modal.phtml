@@ -1,8 +1,21 @@
 <div id="buy-now-modal">
     <div class="modal-inner-content">
         <form action="<?= $block->getUrl('buy_now/place/order');?>" method="post" id="bay-now-form" enctype="multipart/form-data" autocomplete="off" data-mage-init='{"validation":{}}' data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>">
+            <div class="field firstname required">
+                <label for="firstname" class="label"><?= $block->escapeHtmlAttr(__('First Name')) ?></label>
+                <div class="control">
+                    <input type="text" name="firstname" id="firstname" value="" title="First Name" class="required-entry input-text" />
+                </div>
+            </div>
+            <div class="field lastname required">
+                <label for="lastname" class="label"><?= $block->escapeHtmlAttr(__('Last Name')) ?></label>
+                <div class="control">
+                    <input type="text" name="lastname" id="lastname" value="" title="Last Name" class="required-entry input-text" />
+                </div>
+            </div>
+
             <label for="telephone"><?= $block->escapeHtmlAttr(__('Phone Number')) ?></label>
-            <input data-validate="{required:true}" name="telephone" id="telephone" title="<?= $block->escapeHtmlAttr(__('Phone Number')) ?>" value="" class="input-text required validate-phone" type="text" />
+            <input placeholder="+38 0ХХ-ХХХ-ХХ-ХХ" data-validate="{required:true, 'validate-phone':true}" name="telephone" id="telephone" title="<?= $block->escapeHtmlAttr(__('Phone Number')) ?>" value="" class="input-text required validate-phone" type="text" />
         </form>
 
     </div>
@@ -24,9 +37,17 @@
     require(
         [
             'jquery',
-            'Magento_Ui/js/modal/modal'
+            'Magento_Ui/js/modal/modal',
+            'imask'
         ],
-        function($, modal) {
+        function($, modal, imask) {
+            IMask(
+                document.getElementById('telephone'),
+                {
+                    mask: '+38 000-000-00-00'
+                }
+            );
+
             var resultOptions = {
                 type: 'popup',
                 responsive: true,
@@ -40,6 +61,9 @@
                     }
                 }]
             };
+
+            modal(resultOptions, $('#result-success-buy-now-modal'));
+            modal(resultOptions, $('#result-fail-buy-now-modal'));
 
             var options = {
                 type: 'popup',
@@ -71,7 +95,7 @@
                                 } else {
                                     modalSelector = '#result-fail-buy-now-modal';
                                 }
-                                modal(resultOptions, $(modalSelector));
+
                                 $(modalSelector).modal("openModal");
                             },
                             error: function(result){
@@ -93,3 +117,6 @@
         }
     );
 </script>
+<style>
+    .modal-popup .modal-inner-wrap{ width: 30%; }
+</style>
