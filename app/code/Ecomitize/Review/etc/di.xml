@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference for="Magento\Review\Model\ResourceModel\Review"
+                type="Ecomitize\Review\Model\ResourceModel\Review"></preference>
+    <preference for="Magento\Review\Model\ResourceModel\Review\Product\Collection"
+                type="Ecomitize\Review\Model\ResourceModel\Review\Product\Collection"></preference>
+    <preference for="Magento\Review\Model\ResourceModel\Review\Collection"
+                type="Ecomitize\Review\Model\ResourceModel\Review\Collection"></preference>
+</config>

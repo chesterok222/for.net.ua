@@ -329,6 +329,7 @@ return [
         'Magento_WishlistGraphQl' => 1,
         'Ecomitize_BuyNow' => 1,
         'Ecomitize_ProductImport' => 1,
+        'Ecomitize_Review' => 1,
         'Magefan_AdminUserGuide' => 1,
         'Magefan_Community' => 1,
         'Magefan_Blog' => 1,

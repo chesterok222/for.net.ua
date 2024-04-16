@@ -1,0 +1,8 @@
+{
+    "review_detail": {
+        "column": {
+            "phone": true,
+            "email": true
+        }
+    }
+}
