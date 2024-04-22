@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae7930c6a5142de4b006591484a3de60",
+    "content-hash": "ec4e95bcd00f09a1f27dd3f597e97c20",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -1706,6 +1706,58 @@
                 "search"
             ],
             "time": "2022-09-30T12:28:55+00:00"
+        },
+        {
+            "name": "elgentos/regenerate-catalog-urls",
+            "version": "0.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elgentos/magento2-regenerate-catalog-urls.git",
+                "reference": "5faf8a553eca23303a9d47d69e514a1e5840195b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elgentos/magento2-regenerate-catalog-urls/zipball/5faf8a553eca23303a9d47d69e514a1e5840195b",
+                "reference": "5faf8a553eca23303a9d47d69e514a1e5840195b",
+                "shasum": ""
+            },
+            "require": {
+                "magento/framework": "^102.0|^103.0",
+                "magento/module-catalog-url-rewrite": "^100.3|^100.4",
+                "magento/module-url-rewrite": "^101.1|^102.0",
+                "php": "~7.4|~8.0|~8.1"
+            },
+            "replace": {
+                "iazel/module-regen-product-url": "*"
+            },
+            "require-dev": {
+                "mediact/coding-standard-magento2": "@stable",
+                "mediact/testing-suite": "^2.9"
+            },
+            "suggest": {
+                "baldwin/magento2-module-url-data-integrity-checker": "Magento 2 module which can find potential url related problems in your catalog data",
+                "fisheye/module-url-rewrite-optimiser": "A Magento module that stops URL rewrites with category paths being generated for products when 'Use Categories Path for Product URLs' setting is disabled in config."
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "src/registration.php"
+                ],
+                "psr-4": {
+                    "Elgentos\\RegenerateCatalogUrls\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "Regenerate Catalog URL Rewrites (products, categories, cms pages)",
+            "support": {
+                "issues": "https://github.com/elgentos/magento2-regenerate-catalog-urls/issues",
+                "source": "https://github.com/elgentos/magento2-regenerate-catalog-urls/tree/0.4.1"
+            },
+            "time": "2024-04-18T07:33:38+00:00"
         },
         {
             "name": "endroid/qr-code",
