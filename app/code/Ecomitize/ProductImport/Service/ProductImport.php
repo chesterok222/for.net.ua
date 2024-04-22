@@ -8,12 +8,24 @@ use Magento\Catalog\Api\ProductRepositoryInterface;
 use Magento\Catalog\Model\Product\Attribute\Source\Status;
 use Magento\Catalog\Model\Product\Visibility;
 use Magento\Catalog\Model\ProductFactory;
+use Magento\CatalogUrlRewrite\Model\CategoryUrlRewriteGenerator;
+use Magento\UrlRewrite\Model\UrlPersistInterface;
+use Magento\UrlRewrite\Service\V1\Data\UrlRewrite;
 
 /**
  *
  */
 class ProductImport
 {
+    /**
+     * @var UrlPersistInterface
+     */
+    private UrlPersistInterface $urlPersist;
+
+    /**
+     * @var CategoryUrlRewriteGenerator
+     */
+    private CategoryUrlRewriteGenerator $categoryUrlRewriteGenerator;
     /**
      * @var \Magento\Framework\Xml\Parser
      */
@@ -117,6 +129,9 @@ class ProductImport
      * @param \Ecomitize\ProductImport\Service\ImportImageService $importImageService
      * @param ProductRepositoryInterface $productRepository
      * @param Config $config
+     * @param UrlPersistInterface $urlPersist
+     * @param CategoryUrlRewriteGenerator $categoryUrlRewriteGenerator
+     * @throws \Magento\Framework\Exception\LocalizedException
      * @throws \Magento\Framework\Exception\NoSuchEntityException
      */
     public function __construct(
@@ -132,7 +147,9 @@ class ProductImport
         ProductFactory $productFactory,
         ImportImageService $importImageService,
         ProductRepositoryInterface $productRepository,
-        Config $config
+        Config $config,
+        UrlPersistInterface $urlPersist,
+        CategoryUrlRewriteGenerator $categoryUrlRewriteGenerator
     ) {
         $this->parser = $parser;
         $this->productFactory = $productFactory;
@@ -147,6 +164,8 @@ class ProductImport
         $this->categoryRepository = $categoryRepository;
         $this->categoryCollectionFactory = $categoryCollectionFactory;
         $this->config = $config;
+        $this->urlPersist = $urlPersist;
+        $this->categoryUrlRewriteGenerator = $categoryUrlRewriteGenerator;
         $this->uaStore = $this->storeRepository->get(static::UA);
         $this->ruStore = $this->storeRepository->get(static::RU);
         $this->initCategories();
@@ -312,11 +331,52 @@ class ProductImport
                         if ($ruCategoryName != $ruCategory->getName()) {
                             $ruCategory->setName($ruCategoryName);
                             $ruCategory->save();
+
+                            $this->urlPersist->deleteByData(
+                                [
+                                    UrlRewrite::ENTITY_ID => $ruCategory->getId(),
+                                    UrlRewrite::ENTITY_TYPE => CategoryUrlRewriteGenerator::ENTITY_TYPE,
+                                    UrlRewrite::REDIRECT_TYPE => 0,
+                                    UrlRewrite::STORE_ID => $this->ruStore->getId()
+                                ]
+                            );
+
+                            $newUrls = $this->categoryUrlRewriteGenerator->generate($ruCategory);
+
+                            $newUrls = $this->filterEmptyRequestPaths($newUrls);
+                            $this->urlPersist->replace($newUrls);
+
+                            try {
+                                $newUrls = $this->filterEmptyRequestPaths($newUrls);
+                                $this->urlPersist->replace($newUrls);
+                            } catch (\Exception $e) {
+                                var_dump($e->getMessage());
+                                continue;
+                            }
                         }
                     }
                 }
             }
         }
+    }
+
+    /**
+     * @param array $newUrls
+     * @return array
+     */
+    private function filterEmptyRequestPaths(array $newUrls): array
+    {
+        $result = [];
+
+        foreach ($newUrls as $key => $url) {
+            $requestPath = $url->getRequestPath();
+
+            if (!empty($requestPath)) {
+                $result[$key] = $url;
+            }
+        }
+
+        return $result;
     }
 
     /**
