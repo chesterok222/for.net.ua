@@ -328,6 +328,7 @@ return [
         'Magento_WishlistAnalytics' => 1,
         'Magento_WishlistGraphQl' => 1,
         'Ecomitize_BuyNow' => 1,
+        'Ecomitize_MegaMenu' => 1,
         'Ecomitize_ProductImport' => 1,
         'Ecomitize_Review' => 1,
         'Elgentos_RegenerateCatalogUrls' => 1,

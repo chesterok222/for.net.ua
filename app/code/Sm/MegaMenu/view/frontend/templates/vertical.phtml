@@ -67,7 +67,11 @@ $id       = ($this->getFrontController()->getRequest()->getParam('id')) ? $this-
                                     <a class="<?php echo $prefix; ?>head <?php echo ($hasContent) ? $prefix . 'drop' : $prefix . 'nodrop' ?> <?php if ($menuItems->getAllItemsByItemsIdEnabled($itemStartLv['items_id'], $itemStartLv['group_id']) || ($itemStartLv['type'] == 7)) {
                                         echo $prefix . 'haschild';
                                     } ?>"
-                                       href="<?php echo ($hasLinkType) ? $this->getLinkOfType($itemStartLv) : 'javascript:void(0)' ?>" <?php echo ($hasLinkType) ? $this->getTargetAttr($itemStartLv['target']) : '' ?>
+                                        <?php if(isset($itemStartLv['url']) && $itemStartLv['url']): ?>
+                                            href="<?php echo $itemStartLv['url'] ?>"
+                                        <?php else: ?>
+                                            href="<?php echo ($hasLinkType) ? $this->getLinkOfType($itemStartLv) : 'javascript:void(0)' ?>" <?php echo ($hasLinkType) ? $this->getTargetAttr($itemStartLv['target']) : '' ?>
+                                        <?php endif; ?>
                                        id="<?php echo $prefix . $itemStartLv['items_id']; ?>">
                                         <?php if ($this->hasIcon($itemStartLv)) { ?>
                                         <span class="<?php echo $itemStartLv['icon_url']?>"></span>
@@ -187,7 +191,7 @@ $id       = ($this->getFrontController()->getRequest()->getParam('id')) ? $this-
             } else if($(window).width() <= 1299){
                 limit = 7;
             }
-            
+
         <?php } ?>
         items = $('.sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu > li').length;
 
