@@ -14,6 +14,11 @@ use Magento\Framework\Filesystem\Io\File;
 class ImportImageService
 {
     /**
+     * @var \Psr\Log\LoggerInterface
+     */
+    protected $logger;
+
+    /**
      * @var DirectoryList
      */
     protected $directoryList;
@@ -29,15 +34,18 @@ class ImportImageService
     protected $productRepository;
 
     /**
+     * @param \Psr\Log\LoggerInterface $logger
      * @param DirectoryList $directoryList
      * @param File $file
      * @param ProductRepositoryInterface $productRepository
      */
     public function __construct(
+        \Psr\Log\LoggerInterface $logger,
         DirectoryList $directoryList,
         File $file,
         ProductRepositoryInterface $productRepository
     ) {
+        $this->logger = $logger;
         $this->directoryList = $directoryList;
         $this->file = $file;
         $this->productRepository = $productRepository;
@@ -74,7 +82,14 @@ class ImportImageService
         if ($result) {
             /** add saved file to the $product gallery */
             $product->addImageToMediaGallery($newFileName, $imageType, true, $exclude);
-            $product->save();
+
+            try {
+                $product->save();
+            } catch (\Exception $exception) {
+                $this->logger->warning($product->getSku());
+                $this->logger->warning($exception->getMessage());
+            }
+
         }
 
         return $result;

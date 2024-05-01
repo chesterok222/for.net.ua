@@ -8,6 +8,9 @@
                 <ua_url>https://deps.ua/components/com_jshopping/files/importexport/googleadwordsexport/provide-all-ua.xml</ua_url>
                 <ru_url>https://deps.ua/components/com_jshopping/files/importexport/googleadwordsexport/provide-all-ru.xml</ru_url>
             </general>
+            <children>
+                <manage_stock>0</manage_stock>
+            </children>
         </product_import>
     </default>
 </config>

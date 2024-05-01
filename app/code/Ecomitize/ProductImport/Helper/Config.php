@@ -25,6 +25,11 @@ class Config extends \Magento\Framework\App\Helper\AbstractHelper
     const PRODUCT_IMPORT_GENERAL_RU_URL = 'product_import/general/ru_url';
 
     /**
+     *
+     */
+    const PRODUCT_IMPORT_CHILDREN_MANAGE_STOCK = 'product_import/children/manage_stock';
+
+    /**
      * @return int
      */
     public function getIsActive()
@@ -46,6 +51,30 @@ class Config extends \Magento\Framework\App\Helper\AbstractHelper
     public function getRuUrl()
     {
         return $this->scopeConfig->getValue(self::PRODUCT_IMPORT_GENERAL_RU_URL, ScopeInterface::SCOPE_STORE);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getChildrenManageStock()
+    {
+        return (bool)$this->scopeConfig->getValue(self::PRODUCT_IMPORT_CHILDREN_MANAGE_STOCK, ScopeInterface::SCOPE_STORE);
+    }
+
+    /**
+     * @param $availability
+     * @param $outOfStock
+     * @return bool
+     */
+    public function getIsAvailable($availability, $outOfStock)
+    {
+        $childrenManageStock = $this->getChildrenManageStock();
+
+        if (!$childrenManageStock) {
+            return true;
+        }
+
+        return !in_array($availability, $outOfStock);
     }
 
 }

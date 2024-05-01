@@ -9,6 +9,7 @@ use Magento\Catalog\Model\Product\Attribute\Source\Status;
 use Magento\Catalog\Model\Product\Visibility;
 use Magento\Catalog\Model\ProductFactory;
 use Magento\CatalogUrlRewrite\Model\CategoryUrlRewriteGenerator;
+use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\UrlRewrite\Model\UrlPersistInterface;
 use Magento\UrlRewrite\Service\V1\Data\UrlRewrite;
 
@@ -17,6 +18,11 @@ use Magento\UrlRewrite\Service\V1\Data\UrlRewrite;
  */
 class ProductImport
 {
+    /**
+     * @var \Psr\Log\LoggerInterface
+     */
+    protected $logger;
+
     /**
      * @var UrlPersistInterface
      */
@@ -76,6 +82,11 @@ class ProductImport
      * @var \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory
      */
     protected $categoryCollectionFactory;
+
+    /**
+     * @var \Magento\Catalog\Model\Product\Option\ValueFactory
+     */
+    protected $optionValueFactory;
     /**
      * @var Config
      */
@@ -116,6 +127,7 @@ class ProductImport
 
 
     /**
+     * @param \Psr\Log\LoggerInterface $logger
      * @param \Magento\Framework\Xml\Parser $parser
      * @param \Magento\Eav\Model\Config $eavConfig
      * @param \Magento\Eav\Setup\AddOptionToAttribute $addOptionToAttribute
@@ -125,16 +137,18 @@ class ProductImport
      * @param \Magento\Catalog\Model\CategoryFactory $categoryFactory
      * @param \Magento\Catalog\Model\CategoryRepository $categoryRepository
      * @param \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory $categoryCollectionFactory
+     * @param \Magento\Catalog\Model\Product\Option\ValueFactory $optionValueFactory
      * @param ProductFactory $productFactory
      * @param \Ecomitize\ProductImport\Service\ImportImageService $importImageService
      * @param ProductRepositoryInterface $productRepository
      * @param Config $config
      * @param UrlPersistInterface $urlPersist
      * @param CategoryUrlRewriteGenerator $categoryUrlRewriteGenerator
+     * @throws NoSuchEntityException
      * @throws \Magento\Framework\Exception\LocalizedException
-     * @throws \Magento\Framework\Exception\NoSuchEntityException
      */
     public function __construct(
+        \Psr\Log\LoggerInterface $logger,
         \Magento\Framework\Xml\Parser $parser,
         \Magento\Eav\Model\Config $eavConfig,
         \Magento\Eav\Setup\AddOptionToAttribute $addOptionToAttribute,
@@ -144,6 +158,7 @@ class ProductImport
         \Magento\Catalog\Model\CategoryFactory $categoryFactory,
         \Magento\Catalog\Model\CategoryRepository $categoryRepository,
         \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory $categoryCollectionFactory,
+        \Magento\Catalog\Model\Product\Option\ValueFactory $optionValueFactory,
         ProductFactory $productFactory,
         ImportImageService $importImageService,
         ProductRepositoryInterface $productRepository,
@@ -151,6 +166,7 @@ class ProductImport
         UrlPersistInterface $urlPersist,
         CategoryUrlRewriteGenerator $categoryUrlRewriteGenerator
     ) {
+        $this->logger = $logger;
         $this->parser = $parser;
         $this->productFactory = $productFactory;
         $this->importImageService = $importImageService;
@@ -163,6 +179,7 @@ class ProductImport
         $this->categoryFactory = $categoryFactory;
         $this->categoryRepository = $categoryRepository;
         $this->categoryCollectionFactory = $categoryCollectionFactory;
+        $this->optionValueFactory = $optionValueFactory;
         $this->config = $config;
         $this->urlPersist = $urlPersist;
         $this->categoryUrlRewriteGenerator = $categoryUrlRewriteGenerator;
@@ -270,7 +287,9 @@ class ProductImport
      */
     protected function productImport($product, $arrayProduct, $storeCode)
     {
-        $product->setManufacturer($this->getManufacturerId($arrayProduct['Manufacturer'], $storeCode));
+        if (isset($arrayProduct['Manufacturer']) && $arrayProduct['Manufacturer']) {
+            $product->setManufacturer($this->getManufacturerId($arrayProduct['Manufacturer'], $storeCode));
+        }
         $product->setCategoryIds($this->getCategoryIds($arrayProduct['Category'], $storeCode));
         $product->setName($arrayProduct['Product_title']);
         $product->setDescription($arrayProduct['Description']);
@@ -282,12 +301,220 @@ class ProductImport
         try {
             $product = $this->productRepository->save($product);
         } catch (\Exception $exception) {
-            $product->save();
-        }
+            var_dump($exception->getMessage());
+            $this->logger->warning($product->getSku());
+            $this->logger->warning($exception->getMessage());
+            try {
+                $product->save();
+            } catch (\Exception $exception) {
+                $this->logger->warning($exception->getMessage());
+            }
 
+        }
+        $this->setCustomOptions($product, $arrayProduct);
         $this->importImageService->execute($product, $arrayProduct['Image_URL'], $exclude = false, $imageType = ['image', 'small_image', 'thumbnail', 'swatch_image']);
 
         return $product;
+    }
+
+    /**
+     * @param $product
+     * @param $arrayProduct
+     * @return void
+     */
+    protected function setCustomOptions($product, $arrayProduct)
+    {
+        if ($product->getId() && isset($arrayProduct['Attributes']['Attribute']) && !empty($arrayProduct['Attributes']['Attribute']) && is_array($arrayProduct['Attributes']['Attribute'])) {
+            $values = $this->getValues($product, $arrayProduct);
+            $option = $this->getNameOption($product->getId(), $product->getStoreId());
+
+            if ($this->hasDataChanges($product, $arrayProduct, $option, $values)) {
+                if ($option && $option->getId()) {
+                    try {
+                        $option->delete();
+                    } catch (\Exception $exception) {
+                        $this->logger->warning($exception->getMessage());
+                    }
+                }
+                $arrayOption = [
+                    'title' => 'Name',
+                    'type' => 'drop_down',
+                    'is_require' => true,
+                    'sort_order' => 1,
+                    'values' => $values,
+                    'store_id' => $product->getStoreId()
+                ];
+
+                $option = $product->getOptionInstance()
+                    ->setProductId($product->getId())
+                    ->addData($arrayOption);
+
+                try {
+                    $option->setData('store_id', $product->getStoreId())->save();
+                } catch (\Exception $exception) {
+                    $this->logger->warning($exception->getMessage());
+                }
+
+                $product->addOption($option);
+            }
+        }
+    }
+
+    /**
+     * @param $product
+     * @param $arrayProduct
+     * @param $option
+     * @param $values
+     * @return bool
+     */
+    protected function hasDataChanges($product, $arrayProduct, $option, $values)
+    {
+        $result = false;
+
+        if (!$option && !empty($values)) {
+            return true;
+        }
+
+        if (!$option && empty($values)) {
+            return false;
+        }
+        $optionValues = $option->getValues();
+
+        foreach ($optionValues as $optionValue) {
+            if (!isset($values[$optionValue->getSku()])) {
+                try {
+                    $optionValue->delete();
+                } catch (\Exception $exception) {
+                    $this->logger->warning($exception->getMessage());
+                }
+                continue;
+            }
+            $valueToCompare = $values[$optionValue->getSku()];
+
+            if ($valueToCompare['title'] != $optionValue->getTitle()) {
+                try {
+                    $optionValue->setStoreId($product->getStoreId())->setTitle($valueToCompare['title'])->save();
+                } catch (\Exception $exception) {
+                    $this->logger->warning($exception->getMessage());
+                }
+            }
+
+            if ((double)$valueToCompare['price'] != (double)$optionValue->getPrice()) {
+                try {
+                    $optionValue->setStoreId($product->getStoreId())->setPrice((double)$valueToCompare['price'])->save();
+                } catch (\Exception $exception) {
+                    $this->logger->warning($exception->getMessage());
+                }
+            }
+        }
+
+        if (empty($values)) {
+            try {
+                $option->delete();
+            } catch (\Exception $exception) {
+                $this->logger->warning($exception->getMessage());
+            }
+            return false;
+        }
+
+        if (count($optionValues) < count($values)) {
+            foreach ($values as $sku => $value) {
+                $optionExist = false;
+                foreach ($optionValues as $optionValue) {
+                    if ($optionValue->getSku() == $sku) {
+                        $optionExist = true;
+                    }
+                }
+                if (!$optionExist) {
+                    $newValue = $this->optionValueFactory->create();
+                    $newValue->setData([
+                        'option_id' => $option->getId(),
+                        'store_id' => $product->getStoreId(),
+                        'sku' => $sku,
+                        'title' => $value['title'],
+                        'price' => $value['price'],
+                        'price_type' => $value['price_type'],
+                        'sort_order' => $value['sort_order']
+                    ]);
+                    try {
+                        $newValue->save();
+                    } catch (\Exception $exception) {
+                        $this->logger->warning($exception->getMessage());
+                    }
+                }
+            }
+        }
+
+        return $result;
+    }
+
+    /**
+     * @param $productId
+     * @param $storeId
+     * @return false|\Magento\Catalog\Api\Data\ProductCustomOptionInterface|mixed|null
+     */
+    protected function getNameOption($productId, $storeId)
+    {
+        try {
+            $product = $this->productRepository->getById($productId, true, $storeId);
+            $product->setStoreId($storeId);
+        } catch (NoSuchEntityException $e) {
+            return null;
+        }
+        $options = $product->getOptions();
+
+        foreach ($options as $option) {
+            if ($option->getTitle() == 'Name') {
+                return $option;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * @param $product
+     * @param $arrayProduct
+     * @return array
+     */
+    protected function getValues($product, $arrayProduct)
+    {
+        $values = [];
+        $sortOrder = 1;
+
+        if (isset($arrayProduct['Attributes']['Attribute']['Ean']) && $arrayProduct['Attributes']['Attribute']['Ean']
+            && $this->config->getIsAvailable($arrayProduct['Attributes']['Attribute']['Availability'], self::OUT_OF_STOCK)
+        ) {
+            $values[$arrayProduct['Attributes']['Attribute']['Ean']] = [
+                'title' => $arrayProduct['Attributes']['Attribute']['Name'],
+                'price' => $arrayProduct['Attributes']['Attribute']['Retail_price'] - $product->getPrice(),
+                'price_type' => 'fixed',
+                'sku' => $arrayProduct['Attributes']['Attribute']['Ean'],
+                'sort_order' => $sortOrder,
+                'store_id' => $product->getStoreId()
+            ];
+        } else {
+            foreach ($arrayProduct['Attributes']['Attribute'] as $childProductKey => $childProduct) {
+                if (is_array($childProduct)) {
+                    if (isset($childProduct['Ean']) &&
+                        $childProduct['Ean']
+                        && $this->config->getIsAvailable($childProduct['Availability'], self::OUT_OF_STOCK)
+                    ) {
+                        $values[$childProduct['Ean']] = [
+                            'title' => $childProduct['Name'],
+                            'price' => $childProduct['Retail_price'] - $product->getPrice(),
+                            'price_type' => 'fixed',
+                            'sku' => $childProduct['Ean'],
+                            'sort_order' => $sortOrder,
+                            'store_id' => $product->getStoreId()
+                        ];
+                        $sortOrder++;
+                    }
+                }
+            }
+        }
+
+        return $values;
     }
 
     /**
@@ -350,7 +577,7 @@ class ProductImport
                                 $newUrls = $this->filterEmptyRequestPaths($newUrls);
                                 $this->urlPersist->replace($newUrls);
                             } catch (\Exception $e) {
-                                var_dump($e->getMessage());
+                                $this->logger->warning($exception->getMessage());
                                 continue;
                             }
                         }

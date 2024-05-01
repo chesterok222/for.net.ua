@@ -24,6 +24,13 @@
                     <comment>https://deps.ua/components/com_jshopping/files/importexport/googleadwordsexport/provide-all-ru.xml</comment>
                 </field>
             </group>
+            <group id="children" translate="label" type="text" sortOrder="3" showInDefault="1">
+                <label>Children</label>
+                <field id="manage_stock" translate="label comment" type="select" sortOrder="40" showInDefault="1" canRestore="1">
+                    <label>Manage Stock</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
         </section>
     </system>
 </config>
