@@ -206,8 +206,13 @@
 }
 
 .header-middle {
-    padding:41px 0 18px;
+    padding: 20px 0;
     background-color: #fff;
+    .middle-content{
+        align-items: center;
+        display: flex;
+        flex-flow: row wrap;
+    }
 }
 
 .middle-content {
@@ -231,6 +236,7 @@
 }
 
 .right-content {
+    align-items: center;
     display: flex;
     width: 100%;
     justify-content: flex-end;
@@ -533,12 +539,12 @@
             .counter {
                 background: transparent !important;
                 margin: 0px; 
-                display: inline-block;
+                display: block;
                 min-width: auto;
                 height: auto;
                 padding: 0;
                 margin: 0;
-              &.empty{display: inline-block;}
+              &.empty{display: block;}
                 .counter-label {
                     display: none;
                 }
