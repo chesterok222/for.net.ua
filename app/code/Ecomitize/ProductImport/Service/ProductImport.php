@@ -298,10 +298,34 @@ class ProductImport
         $product->setPrice($this->getProductPrice($arrayProduct));
         $product->setStockData($this->getStockData($arrayProduct));
 
+        $product = $this->saveProduct($product);
+
+        if ($this->config->getChildrenAsProduct()) {
+            $this->addChildrenProducts($product, $arrayProduct);
+        } else {
+            $this->setCustomOptions($product, $arrayProduct);
+        }
+
+        $this->importImageService->execute($product, $arrayProduct['Image_URL'], $exclude = false, $imageType = ['image', 'small_image', 'thumbnail', 'swatch_image']);
+
+        return $product;
+    }
+
+    /**
+     * @param $product
+     * @return \Magento\Catalog\Api\Data\ProductInterface|mixed
+     */
+    protected function saveProduct($product)
+    {
         try {
+            $simpleProduct = $this->productFactory->create()->setStoreId($product->getStoreId())->loadByAttribute('url_key', $product->getUrlKey());
+
+            if ($simpleProduct && $simpleProduct->getId() && $product->getId() != $simpleProduct->getId()) {
+                $product->setData('url_key', $product->getUrlKey() . '-' . bin2hex(random_bytes(5)));
+                $product->setData('url_path', $product->getUrlKey());
+            }
             $product = $this->productRepository->save($product);
         } catch (\Exception $exception) {
-            var_dump($exception->getMessage());
             $this->logger->warning($product->getSku());
             $this->logger->warning($exception->getMessage());
             try {
@@ -311,10 +335,63 @@ class ProductImport
             }
 
         }
-        $this->setCustomOptions($product, $arrayProduct);
-        $this->importImageService->execute($product, $arrayProduct['Image_URL'], $exclude = false, $imageType = ['image', 'small_image', 'thumbnail', 'swatch_image']);
 
         return $product;
+    }
+
+    /**
+     * @param $product
+     * @param $arrayProduct
+     * @return void
+     */
+    protected function addChildrenProducts($product, $arrayProduct)
+    {
+        if ($product->getId() && isset($arrayProduct['Attributes']['Attribute']) && !empty($arrayProduct['Attributes']['Attribute']) && is_array($arrayProduct['Attributes']['Attribute'])) {
+            $attributes = $this->getAttributes($product, $arrayProduct);
+            if ($product->getOptions()) {
+                foreach ($product->getOptions() as $opt) {
+                    $opt->delete();
+                }
+            }
+            foreach ($attributes as $attribute) {
+                $simpleProduct = $this->productFactory->create()->setStoreId($product->getStoreId())->loadByAttribute('sku', trim($attribute['sku']));
+
+                if (!($simpleProduct && $simpleProduct->getId())) {
+                    try {
+                        $simpleProduct = $this->productFactory->create()->setStoreId($product->getStoreId());
+                        $productData = $product->getData();
+                        $productData['entity_id'] = null;
+                        foreach (['media_gallery', 'is_salable', 'extension_attributes', 'sku', 'quantity_and_stock_status', 'options', 'required_options', 'has_options'] as $attributeCode) {
+                            unset($productData[$attributeCode]);
+                        }
+
+                        $simpleProduct->setData($productData);
+                    } catch (\Exception $exception) {
+                        $this->logger->warning($exception->getMessage());
+                        continue;
+                    }
+                }
+
+                $urlKey = $this->getUrlKey($attribute['name']);
+                $simpleProduct->setUrlKey($urlKey);
+                $simpleProduct->setUrlPath($urlKey);
+                $simpleProduct->setName($attribute['name']);
+                $simpleProduct->setPrice($attribute['price']);
+                $simpleProduct->setSku($attribute['sku']);
+                $simpleProduct->setStockData($this->getStockData($attribute));
+
+                $this->saveProduct($simpleProduct);
+            }
+        }
+    }
+
+    public function getUrlKey($name)
+    {
+        $urlKey = preg_replace('#[^0-9a-z]+#i', '-', $name);
+        $urlKey = strtolower($urlKey);
+        $urlKey = trim($urlKey, '-');
+
+        return $urlKey;
     }
 
     /**
@@ -470,6 +547,42 @@ class ProductImport
         }
 
         return false;
+    }
+
+    /**
+     * @param $product
+     * @param $arrayProduct
+     * @return array
+     */
+    protected function getAttributes($product, $arrayProduct)
+    {
+        $attributes = [];
+
+        if (isset($arrayProduct['Attributes']['Attribute']['Ean']) && $arrayProduct['Attributes']['Attribute']['Ean']) {
+            $attributes[$arrayProduct['Attributes']['Attribute']['Ean']] = [
+                'name' => $arrayProduct['Attributes']['Attribute']['Name'],
+                'price' => $arrayProduct['Attributes']['Attribute']['Retail_price'],
+                'sku' => $arrayProduct['Attributes']['Attribute']['Ean'],
+                'Availability' => $arrayProduct['Attributes']['Attribute']['Availability'],
+                'store_id' => $product->getStoreId()
+            ];
+        } else {
+            foreach ($arrayProduct['Attributes']['Attribute'] as $childProductKey => $childProduct) {
+                if (is_array($childProduct)) {
+                    if (isset($childProduct['Ean']) && $childProduct['Ean']) {
+                        $attributes[$childProduct['Ean']] = [
+                            'name' => $childProduct['Name'],
+                            'price' => $childProduct['Retail_price'],
+                            'sku' => $childProduct['Ean'],
+                            'Availability' => $childProduct['Availability'],
+                            'store_id' => $product->getStoreId()
+                        ];
+                    }
+                }
+            }
+        }
+
+        return $attributes;
     }
 
     /**
@@ -761,7 +874,7 @@ class ProductImport
             'qty' => 100
         ];
 
-        if ($arrayProduct['Item_address'] && in_array($arrayProduct['Item_address'], self::OUT_OF_STOCK)) {
+        if ($arrayProduct['Availability'] && in_array($arrayProduct['Availability'], self::OUT_OF_STOCK)) {
             $stockData['is_in_stock'] = 0;
             $stockData['qty'] = 0;
         }

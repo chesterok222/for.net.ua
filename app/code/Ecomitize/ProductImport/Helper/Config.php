@@ -30,6 +30,11 @@ class Config extends \Magento\Framework\App\Helper\AbstractHelper
     const PRODUCT_IMPORT_CHILDREN_MANAGE_STOCK = 'product_import/children/manage_stock';
 
     /**
+     *
+     */
+    const PRODUCT_IMPORT_CHILDREN_CHILDREN_AS = 'product_import/children/children_as';
+
+    /**
      * @return int
      */
     public function getIsActive()
@@ -59,6 +64,14 @@ class Config extends \Magento\Framework\App\Helper\AbstractHelper
     public function getChildrenManageStock()
     {
         return (bool)$this->scopeConfig->getValue(self::PRODUCT_IMPORT_CHILDREN_MANAGE_STOCK, ScopeInterface::SCOPE_STORE);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getChildrenAsProduct()
+    {
+        return (bool)$this->scopeConfig->getValue(self::PRODUCT_IMPORT_CHILDREN_CHILDREN_AS, ScopeInterface::SCOPE_STORE);
     }
 
     /**

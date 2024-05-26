@@ -9,6 +9,7 @@
                 <ru_url>https://deps.ua/components/com_jshopping/files/importexport/googleadwordsexport/provide-all-ru.xml</ru_url>
             </general>
             <children>
+                <children_as>1</children_as>
                 <manage_stock>0</manage_stock>
             </children>
         </product_import>

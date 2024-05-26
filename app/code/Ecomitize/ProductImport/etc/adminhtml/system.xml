@@ -26,6 +26,10 @@
             </group>
             <group id="children" translate="label" type="text" sortOrder="3" showInDefault="1">
                 <label>Children</label>
+                <field id="children_as" translate="label comment" type="select" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Add Сhildren As</label>
+                    <source_model>Ecomitize\ProductImport\Model\Config\Source\ChildrenAs</source_model>
+                </field>
                 <field id="manage_stock" translate="label comment" type="select" sortOrder="40" showInDefault="1" canRestore="1">
                     <label>Manage Stock</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
