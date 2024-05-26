@@ -9,6 +9,7 @@ use Magento\Catalog\Model\Product\Attribute\Source\Status;
 use Magento\Catalog\Model\Product\Visibility;
 use Magento\Catalog\Model\ProductFactory;
 use Magento\CatalogUrlRewrite\Model\CategoryUrlRewriteGenerator;
+use Magento\Framework\App\ResourceConnection;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\UrlRewrite\Model\UrlPersistInterface;
 use Magento\UrlRewrite\Service\V1\Data\UrlRewrite;
@@ -87,6 +88,11 @@ class ProductImport
      * @var \Magento\Catalog\Model\Product\Option\ValueFactory
      */
     protected $optionValueFactory;
+
+    /**
+     * @var \Magento\Framework\App\ResourceConnection $resource
+     */
+    protected $resource;
     /**
      * @var Config
      */
@@ -138,6 +144,7 @@ class ProductImport
      * @param \Magento\Catalog\Model\CategoryRepository $categoryRepository
      * @param \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory $categoryCollectionFactory
      * @param \Magento\Catalog\Model\Product\Option\ValueFactory $optionValueFactory
+     * @param ResourceConnection $resource
      * @param ProductFactory $productFactory
      * @param \Ecomitize\ProductImport\Service\ImportImageService $importImageService
      * @param ProductRepositoryInterface $productRepository
@@ -159,6 +166,7 @@ class ProductImport
         \Magento\Catalog\Model\CategoryRepository $categoryRepository,
         \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory $categoryCollectionFactory,
         \Magento\Catalog\Model\Product\Option\ValueFactory $optionValueFactory,
+        ResourceConnection $resource,
         ProductFactory $productFactory,
         ImportImageService $importImageService,
         ProductRepositoryInterface $productRepository,
@@ -180,6 +188,7 @@ class ProductImport
         $this->categoryRepository = $categoryRepository;
         $this->categoryCollectionFactory = $categoryCollectionFactory;
         $this->optionValueFactory = $optionValueFactory;
+        $this->resource = $resource;
         $this->config = $config;
         $this->urlPersist = $urlPersist;
         $this->categoryUrlRewriteGenerator = $categoryUrlRewriteGenerator;
@@ -355,11 +364,13 @@ class ProductImport
             }
             foreach ($attributes as $attribute) {
                 $simpleProduct = $this->productFactory->create()->setStoreId($product->getStoreId())->loadByAttribute('sku', trim($attribute['sku']));
+                $images = [];
 
                 if (!($simpleProduct && $simpleProduct->getId())) {
                     try {
                         $simpleProduct = $this->productFactory->create()->setStoreId($product->getStoreId());
                         $productData = $product->getData();
+                        $images = $product->getMediaGalleryImages();
                         $productData['entity_id'] = null;
                         foreach (['media_gallery', 'is_salable', 'extension_attributes', 'sku', 'quantity_and_stock_status', 'options', 'required_options', 'has_options'] as $attributeCode) {
                             unset($productData[$attributeCode]);
@@ -380,7 +391,31 @@ class ProductImport
                 $simpleProduct->setSku($attribute['sku']);
                 $simpleProduct->setStockData($this->getStockData($attribute));
 
-                $this->saveProduct($simpleProduct);
+                $simpleProduct = $this->saveProduct($simpleProduct);
+
+                if (!empty($images)) {
+                    foreach ($images as $image) {
+                        $connection = $this->resource->getConnection();
+                        $connection->insertOnDuplicate(
+                            'catalog_product_entity_media_gallery_value',
+                            [
+                                'value_id' => $image->getData('value_id'),
+                                'store_id' => $simpleProduct->getStoreId(),
+                                'entity_id' => $simpleProduct->getId(),
+                                'label' => $image->getData('label'),
+                                'position' => $image->getData('position'),
+                                'disabled' => $image->getData('disabled')
+                            ],
+                        );
+                        $connection->insertOnDuplicate(
+                            'catalog_product_entity_media_gallery_value_to_entity',
+                            [
+                                'value_id' => $image->getData('value_id'),
+                                'entity_id' => $simpleProduct->getId()
+                            ],
+                        );
+                    }
+                }
             }
         }
     }
