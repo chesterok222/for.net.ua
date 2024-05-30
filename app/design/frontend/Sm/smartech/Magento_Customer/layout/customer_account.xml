@@ -11,6 +11,8 @@
     <body>
         <referenceBlock name="customer-account-navigation-downloadable-products-link" remove="true"/>
         <referenceBlock name="customer-account-navigation-my-credit-cards-link" remove="true"/>
+        <referenceBlock name="customer-account-navigation-delimiter-1" remove="true"/>
+        <referenceBlock name="customer-account-navigation-delimiter-2" remove="true"/>
         
     </body>
 </page>
